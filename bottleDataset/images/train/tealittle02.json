@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.0,
-      "label": "little",
-      "score": 0.8398829698562622,
-      "points": [
-        [
-          1068.0,
-          1453.0
-        ],
-        [
-          1469.0,
-          1453.0
-        ],
-        [
-          1469.0,
-          2568.0
-        ],
-        [
-          1068.0,
-          2568.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "tealittle02.jpg",
-  "imageData": null,
-  "imageHeight": 4080,
-  "imageWidth": 1832,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.0,
+                       "label":  "little",
+                       "points":  [
+                                      [
+                                          1068.0,
+                                          1453.0
+                                      ],
+                                      [
+                                          1469.0,
+                                          1453.0
+                                      ],
+                                      [
+                                          1469.0,
+                                          2568.0
+                                      ],
+                                      [
+                                          1068.0,
+                                          2568.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "tealittle02.jpg",
+    "imageData":  null,
+    "imageHeight":  4080,
+    "imageWidth":  1832,
+    "description":  ""
 }

@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 6.1773125487658165,
-      "label": "little",
-      "score": 0.8281388282775879,
-      "points": [
-        [
-          356.2066087219151,
-          467.90655286101844
-        ],
-        [
-          1206.1391447274864,
-          377.58412241227575
-        ],
-        [
-          1443.4325360055718,
-          2610.5109028845905
-        ],
-        [
-          593.5000000000005,
-          2700.833333333333
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "tealittle03.jpg",
-  "imageData": null,
-  "imageHeight": 4080,
-  "imageWidth": 1832,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  6.1773125487658165,
+                       "label":  "little",
+                       "points":  [
+                                      [
+                                          356.2066087219151,
+                                          467.90655286101844
+                                      ],
+                                      [
+                                          1206.1391447274864,
+                                          377.58412241227575
+                                      ],
+                                      [
+                                          1443.4325360055718,
+                                          2610.5109028845905
+                                      ],
+                                      [
+                                          593.5000000000005,
+                                          2700.833333333333
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "tealittle03.jpg",
+    "imageData":  null,
+    "imageHeight":  4080,
+    "imageWidth":  1832,
+    "description":  ""
 }

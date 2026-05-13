@@ -1,41 +1,48 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "shapes": [
-    {
-      "label": "bottle",
-      "score": 0.6090837121009827,
-      "points": [
-        [
-          617,
-          568
-        ],
-        [
-          970,
-          712
-        ],
-        [
-          573,
-          1686
-        ],
-        [
-          220,
-          1543
-        ]
-      ],
-      "group_id": null,
-      "description": null,
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": [],
-      "direction": 0.3873255602557907
-    }
-  ],
-  "imagePath": "IB80.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "shapes":  [
+                   {
+                       "label":  "bottle",
+                       "points":  [
+                                      [
+                                          617,
+                                          568
+                                      ],
+                                      [
+                                          970,
+                                          712
+                                      ],
+                                      [
+                                          573,
+                                          1686
+                                      ],
+                                      [
+                                          220,
+                                          1543
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  null,
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ],
+                       "direction":  0.3873255602557907
+                   }
+               ],
+    "imagePath":  "IB80.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

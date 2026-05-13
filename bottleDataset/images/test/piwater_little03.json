@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "label": "little",
-      "score": null,
-      "points": [
-        [
-          1247.7343187138993,
-          694.309416627199
-        ],
-        [
-          1879.4703548586504,
-          1205.8791718911227
-        ],
-        [
-          691.9027028114174,
-          2672.403088597256
-        ],
-        [
-          60.166666666666515,
-          2160.8333333333326
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": [],
-      "direction": 0.680678408277789
-    }
-  ],
-  "imagePath": "piwater_little03.jpg",
-  "imageData": null,
-  "imageHeight": 4080,
-  "imageWidth": 1832,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "label":  "little",
+                       "points":  [
+                                      [
+                                          1247.7343187138993,
+                                          694.309416627199
+                                      ],
+                                      [
+                                          1879.4703548586504,
+                                          1205.8791718911227
+                                      ],
+                                      [
+                                          691.9027028114174,
+                                          2672.403088597256
+                                      ],
+                                      [
+                                          60.166666666666515,
+                                          2160.8333333333326
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ],
+                       "direction":  0.680678408277789
+                   }
+               ],
+    "imagePath":  "piwater_little03.jpg",
+    "imageData":  null,
+    "imageHeight":  4080,
+    "imageWidth":  1832,
+    "description":  ""
 }

@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "label": "mid",
-      "score": null,
-      "points": [
-        [
-          425.506172839506,
-          193.08641975308643
-        ],
-        [
-          1062.543209876543,
-          193.08641975308643
-        ],
-        [
-          1062.543209876543,
-          2099.259259259259
-        ],
-        [
-          425.506172839506,
-          2099.259259259259
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": [],
-      "direction": 0
-    }
-  ],
-  "imagePath": "piwater_middle10.jpg",
-  "imageData": null,
-  "imageHeight": 3280,
-  "imageWidth": 1472,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "label":  "mid",
+                       "points":  [
+                                      [
+                                          425.506172839506,
+                                          193.08641975308643
+                                      ],
+                                      [
+                                          1062.543209876543,
+                                          193.08641975308643
+                                      ],
+                                      [
+                                          1062.543209876543,
+                                          2099.259259259259
+                                      ],
+                                      [
+                                          425.506172839506,
+                                          2099.259259259259
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ],
+                       "direction":  0
+                   }
+               ],
+    "imagePath":  "piwater_middle10.jpg",
+    "imageData":  null,
+    "imageHeight":  3280,
+    "imageWidth":  1472,
+    "description":  ""
 }

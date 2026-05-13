@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.5793260316987662,
-      "label": "mid",
-      "score": 0.8615001440048218,
-      "points": [
-        [
-          923.0,
-          990.0
-        ],
-        [
-          1244.0,
-          1200.0
-        ],
-        [
-          663.0,
-          2086.0
-        ],
-        [
-          342.0,
-          1876.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "piwater_middle03.jpg",
-  "imageData": null,
-  "imageHeight": 4080,
-  "imageWidth": 1832,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.5793260316987662,
+                       "label":  "mid",
+                       "points":  [
+                                      [
+                                          923.0,
+                                          990.0
+                                      ],
+                                      [
+                                          1244.0,
+                                          1200.0
+                                      ],
+                                      [
+                                          663.0,
+                                          2086.0
+                                      ],
+                                      [
+                                          342.0,
+                                          1876.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "piwater_middle03.jpg",
+    "imageData":  null,
+    "imageHeight":  4080,
+    "imageWidth":  1832,
+    "description":  ""
 }

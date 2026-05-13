@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 5.675222784539995,
-      "label": "mid",
-      "score": 0.8643485307693481,
-      "points": [
-        [
-          6.0,
-          546.0
-        ],
-        [
-          371.0,
-          292.0
-        ],
-        [
-          961.0,
-          1140.0
-        ],
-        [
-          596.0,
-          1394.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "image1.jpg",
-  "imageData": null,
-  "imageHeight": 2282,
-  "imageWidth": 1024,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  5.675222784539995,
+                       "label":  "mid",
+                       "points":  [
+                                      [
+                                          6.0,
+                                          546.0
+                                      ],
+                                      [
+                                          371.0,
+                                          292.0
+                                      ],
+                                      [
+                                          961.0,
+                                          1140.0
+                                      ],
+                                      [
+                                          596.0,
+                                          1394.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "image1.jpg",
+    "imageData":  null,
+    "imageHeight":  2282,
+    "imageWidth":  1024,
+    "description":  ""
 }

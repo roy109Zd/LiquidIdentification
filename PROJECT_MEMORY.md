@@ -27,9 +27,10 @@ source /root/envs/torchforge/bin/activate
 ## Dataset Notes
 
 - The dataset root is `/mnt/e/LiquidIdentification/bottleDataset`
-- The project supports two label sets:
+- The project supports three label sets:
   - `labels_0123`: `0=none`, `1=little`, `2=mid`, `3=much`
   - `labels_01`: `0=none`, `1=exist`
+  - `label_bottle`: `0=bottle`
 - `bottleDataset/labels` is an active link used by Ultralytics, `train_obb.py` should point it to the selected label set before training
 - Do not pass `--data bottle_obb.yaml` when using `--label-set`, because that bypasses automatic label-set switching
 - Use `convert_roboflow_yolo_to_obb.py` for Roboflow YOLO detection exports that need conversion to this project's OBB label format
@@ -47,6 +48,18 @@ Binary training:
 
 ```bash
 python train_obb.py --model yolo11m-obb.pt --label-set labels_01 --epochs 200 --imgsz 640 --batch 4 --device 0 --workers 2 --name bottle_01_yolo11m_640_b4
+```
+
+Bottle-only training:
+
+```bash
+python train_obb.py --model yolo11m-obb.pt --label-set label_bottle --epochs 200 --imgsz 640 --batch 4 --device 0 --workers 2 --name bottle_only_yolo11m_640_b4
+```
+
+Geometry augmentation with translation and rotation:
+
+```bash
+python train_obb.py --model yolo11m-obb.pt --label-set label_bottle --epochs 200 --imgsz 640 --batch 4 --device 0 --workers 2 --name bottle_only_aug_yolo11m_640_b4 --augment-geom --degrees 10 --translate 0.1
 ```
 
 If CUDA memory is insufficient, reduce `--batch 4` to `--batch 2`

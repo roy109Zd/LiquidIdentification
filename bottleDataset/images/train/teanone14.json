@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 6.2499565452062615,
-      "label": "none",
-      "score": 0.6878288388252258,
-      "points": [
-        [
-          325.0,
-          846.0
-        ],
-        [
-          1047.0,
-          822.0
-        ],
-        [
-          1119.0,
-          3034.0
-        ],
-        [
-          398.0,
-          3057.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "teanone14.jpg",
-  "imageData": null,
-  "imageHeight": 4080,
-  "imageWidth": 1832,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  6.2499565452062615,
+                       "label":  "none",
+                       "points":  [
+                                      [
+                                          325.0,
+                                          846.0
+                                      ],
+                                      [
+                                          1047.0,
+                                          822.0
+                                      ],
+                                      [
+                                          1119.0,
+                                          3034.0
+                                      ],
+                                      [
+                                          398.0,
+                                          3057.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "teanone14.jpg",
+    "imageData":  null,
+    "imageHeight":  4080,
+    "imageWidth":  1832,
+    "description":  ""
 }

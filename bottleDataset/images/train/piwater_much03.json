@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.5652572528432567,
-      "label": "much",
-      "score": 0.5751233696937561,
-      "points": [
-        [
-          1242.0,
-          1055.0
-        ],
-        [
-          1722.671604959746,
-          1359.8888072781863
-        ],
-        [
-          812.0317460317456,
-          2795.5555555555557
-        ],
-        [
-          331.36014107199935,
-          2490.6667482773696
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "piwater_much03.jpg",
-  "imageData": null,
-  "imageHeight": 4080,
-  "imageWidth": 1832,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.5652572528432567,
+                       "label":  "much",
+                       "points":  [
+                                      [
+                                          1242.0,
+                                          1055.0
+                                      ],
+                                      [
+                                          1722.671604959746,
+                                          1359.8888072781863
+                                      ],
+                                      [
+                                          812.0317460317456,
+                                          2795.5555555555557
+                                      ],
+                                      [
+                                          331.36014107199935,
+                                          2490.6667482773696
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "piwater_much03.jpg",
+    "imageData":  null,
+    "imageHeight":  4080,
+    "imageWidth":  1832,
+    "description":  ""
 }

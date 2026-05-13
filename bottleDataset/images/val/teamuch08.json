@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.03935858369857963,
-      "label": "much",
-      "score": 0.9155499339103699,
-      "points": [
-        [
-          634.0540352661744,
-          247.39439589972517
-        ],
-        [
-          1146.8135174691797,
-          267.58631039304566
-        ],
-        [
-          1076.9459647338258,
-          1991.6056041002748
-        ],
-        [
-          565.1851120655745,
-          1971.3613536507112
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "teamuch08.jpg",
-  "imageData": null,
-  "imageHeight": 3280,
-  "imageWidth": 1472,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.03935858369857963,
+                       "label":  "much",
+                       "points":  [
+                                      [
+                                          634.0540352661744,
+                                          247.39439589972517
+                                      ],
+                                      [
+                                          1146.8135174691797,
+                                          267.58631039304566
+                                      ],
+                                      [
+                                          1076.9459647338258,
+                                          1991.6056041002748
+                                      ],
+                                      [
+                                          565.1851120655745,
+                                          1971.3613536507112
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "teamuch08.jpg",
+    "imageData":  null,
+    "imageHeight":  3280,
+    "imageWidth":  1472,
+    "description":  ""
 }

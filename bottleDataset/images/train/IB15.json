@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.011868878846258962,
-      "label": "much",
-      "score": 0.9203018546104431,
-      "points": [
-        [
-          485.0,
-          126.0
-        ],
-        [
-          822.0,
-          130.0
-        ],
-        [
-          805.0,
-          1360.0
-        ],
-        [
-          468.0,
-          1355.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB15.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.011868878846258962,
+                       "label":  "much",
+                       "points":  [
+                                      [
+                                          485.0,
+                                          126.0
+                                      ],
+                                      [
+                                          822.0,
+                                          130.0
+                                      ],
+                                      [
+                                          805.0,
+                                          1360.0
+                                      ],
+                                      [
+                                          468.0,
+                                          1355.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB15.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

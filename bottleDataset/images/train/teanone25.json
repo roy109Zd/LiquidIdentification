@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 6.255668540980756,
-      "label": "none",
-      "score": 0.8068251013755798,
-      "points": [
-        [
-          333.93814189030024,
-          487.1483003431383
-        ],
-        [
-          1161.3650880362193,
-          464.37443831584073
-        ],
-        [
-          1236.0618581096996,
-          3209.8516996568624
-        ],
-        [
-          408.56515549003655,
-          3231.6279976338997
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "teanone25.jpg",
-  "imageData": null,
-  "imageHeight": 4080,
-  "imageWidth": 1832,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  6.255668540980756,
+                       "label":  "none",
+                       "points":  [
+                                      [
+                                          333.93814189030024,
+                                          487.1483003431383
+                                      ],
+                                      [
+                                          1161.3650880362193,
+                                          464.37443831584073
+                                      ],
+                                      [
+                                          1236.0618581096996,
+                                          3209.8516996568624
+                                      ],
+                                      [
+                                          408.56515549003655,
+                                          3231.6279976338997
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "teanone25.jpg",
+    "imageData":  null,
+    "imageHeight":  4080,
+    "imageWidth":  1832,
+    "description":  ""
 }

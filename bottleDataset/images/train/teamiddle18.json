@@ -1,72 +1,84 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 6.2573290018203265,
-      "label": "much",
-      "score": 0.8317651748657227,
-      "points": [
-        [
-          668.0,
-          920.0
-        ],
-        [
-          1248.0,
-          905.0
-        ],
-        [
-          1294.0,
-          2652.0
-        ],
-        [
-          713.0,
-          2667.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    },
-    {
-      "direction": 0.1841638179262923,
-      "label": "bottle",
-      "score": 0.6957342624664307,
-      "points": [
-        [
-          1519.0,
-          73.0
-        ],
-        [
-          1723.0,
-          111.0
-        ],
-        [
-          1586.0,
-          847.0
-        ],
-        [
-          1382.0,
-          809.0
-        ]
-      ],
-      "group_id": null,
-      "description": null,
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "teamiddle18.jpg",
-  "imageData": null,
-  "imageHeight": 4080,
-  "imageWidth": 1832,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  6.2573290018203265,
+                       "label":  "much",
+                       "points":  [
+                                      [
+                                          668.0,
+                                          920.0
+                                      ],
+                                      [
+                                          1248.0,
+                                          905.0
+                                      ],
+                                      [
+                                          1294.0,
+                                          2652.0
+                                      ],
+                                      [
+                                          713.0,
+                                          2667.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   },
+                   {
+                       "direction":  0.1841638179262923,
+                       "label":  "bottle",
+                       "points":  [
+                                      [
+                                          1519.0,
+                                          73.0
+                                      ],
+                                      [
+                                          1723.0,
+                                          111.0
+                                      ],
+                                      [
+                                          1586.0,
+                                          847.0
+                                      ],
+                                      [
+                                          1382.0,
+                                          809.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  null,
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "teamiddle18.jpg",
+    "imageData":  null,
+    "imageHeight":  4080,
+    "imageWidth":  1832,
+    "description":  ""
 }

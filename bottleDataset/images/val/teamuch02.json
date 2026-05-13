@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.04397769634372027,
-      "label": "much",
-      "score": 0.8296016454696655,
-      "points": [
-        [
-          636.0,
-          580.0
-        ],
-        [
-          1295.0,
-          609.0
-        ],
-        [
-          1206.0,
-          2601.0
-        ],
-        [
-          548.0,
-          2571.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "teamuch02.jpg",
-  "imageData": null,
-  "imageHeight": 4080,
-  "imageWidth": 1832,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.04397769634372027,
+                       "label":  "much",
+                       "points":  [
+                                      [
+                                          636.0,
+                                          580.0
+                                      ],
+                                      [
+                                          1295.0,
+                                          609.0
+                                      ],
+                                      [
+                                          1206.0,
+                                          2601.0
+                                      ],
+                                      [
+                                          548.0,
+                                          2571.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "teamuch02.jpg",
+    "imageData":  null,
+    "imageHeight":  4080,
+    "imageWidth":  1832,
+    "description":  ""
 }

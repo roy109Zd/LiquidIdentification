@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.5619960191421742,
-      "label": "much",
-      "score": null,
-      "points": [
-        [
-          233.06943458622914,
-          383.9258437389172
-        ],
-        [
-          1020.4027777777778,
-          879.7361111111107
-        ],
-        [
-          857.7361209693263,
-          1138.0463784833048
-        ],
-        [
-          70.40277777777766,
-          642.2361111111111
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB32.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.5619960191421742,
+                       "label":  "much",
+                       "points":  [
+                                      [
+                                          233.06943458622914,
+                                          383.9258437389172
+                                      ],
+                                      [
+                                          1020.4027777777778,
+                                          879.7361111111107
+                                      ],
+                                      [
+                                          857.7361209693263,
+                                          1138.0463784833048
+                                      ],
+                                      [
+                                          70.40277777777766,
+                                          642.2361111111111
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB32.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

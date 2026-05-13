@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 6.109732322392884,
-      "label": "much",
-      "score": 0.625472903251648,
-      "points": [
-        [
-          -7.0,
-          774.0
-        ],
-        [
-          1163.0,
-          569.0
-        ],
-        [
-          1221.0,
-          900.0
-        ],
-        [
-          49.0,
-          1104.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB64.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  6.109732322392884,
+                       "label":  "much",
+                       "points":  [
+                                      [
+                                          -7.0,
+                                          774.0
+                                      ],
+                                      [
+                                          1163.0,
+                                          569.0
+                                      ],
+                                      [
+                                          1221.0,
+                                          900.0
+                                      ],
+                                      [
+                                          49.0,
+                                          1104.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB64.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

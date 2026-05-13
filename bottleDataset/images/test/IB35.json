@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 6.212238592739396,
-      "label": "mid",
-      "score": 0.9176384806632996,
-      "points": [
-        [
-          352.0,
-          219.0
-        ],
-        [
-          746.0,
-          191.0
-        ],
-        [
-          832.0,
-          1404.0
-        ],
-        [
-          438.0,
-          1432.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB35.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  6.212238592739396,
+                       "label":  "mid",
+                       "points":  [
+                                      [
+                                          352.0,
+                                          219.0
+                                      ],
+                                      [
+                                          746.0,
+                                          191.0
+                                      ],
+                                      [
+                                          832.0,
+                                          1404.0
+                                      ],
+                                      [
+                                          438.0,
+                                          1432.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB35.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

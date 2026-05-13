@@ -10,6 +10,7 @@ DEFAULT_DATASET = ROOT / "bottleDataset"
 SPLITS = ("train", "val", "test")
 IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".bmp", ".webp"}
 LABEL_NAMES_01 = ("none", "exist")
+LABEL_NAMES_BOTTLE = ("bottle",)
 
 
 def parse_args():
@@ -196,6 +197,38 @@ def rebuild_labels_01(dataset: Path, labels_0123: Path):
     return labels_01
 
 
+def convert_bottle_label_file(source: Path, target: Path):
+    converted = []
+    for raw_line in source.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line:
+            converted.append("")
+            continue
+
+        parts = line.split()
+        parts[0] = "0"
+        converted.append(" ".join(parts))
+
+    target.parent.mkdir(parents=True, exist_ok=True)
+    text = "\n".join(converted)
+    if text:
+        text += "\n"
+    target.write_text(text, encoding="utf-8")
+
+
+def rebuild_label_bottle(dataset: Path, labels_0123: Path):
+    label_bottle = dataset / "label_bottle"
+    if label_bottle.exists():
+        shutil.rmtree(label_bottle)
+
+    for split in SPLITS:
+        for source in sorted((labels_0123 / split).glob("*.txt")):
+            convert_bottle_label_file(source, label_bottle / split / source.name)
+
+    (label_bottle / "classify.txt").write_text("\n".join(LABEL_NAMES_BOTTLE) + "\n", encoding="utf-8")
+    return label_bottle
+
+
 def print_summary(summary):
     print("\nPlanned stratified split:")
     print("class train val test total")
@@ -225,7 +258,12 @@ def main():
     remove_caches(labels_0123)
     labels_01 = rebuild_labels_01(dataset, labels_0123)
     remove_caches(labels_01)
-    print(f"\nPrepared {labels_0123.relative_to(dataset)} and {labels_01.relative_to(dataset)}.")
+    label_bottle = rebuild_label_bottle(dataset, labels_0123)
+    remove_caches(label_bottle)
+    print(
+        f"\nPrepared {labels_0123.relative_to(dataset)}, "
+        f"{labels_01.relative_to(dataset)}, and {label_bottle.relative_to(dataset)}."
+    )
 
 
 if __name__ == "__main__":

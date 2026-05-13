@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.014769974616824529,
-      "label": "little",
-      "score": 0.8279580473899841,
-      "points": [
-        [
-          304.0,
-          225.0
-        ],
-        [
-          1017.7044134372366,
-          235.54216268001827
-        ],
-        [
-          990.5952380952378,
-          2070.833333333333
-        ],
-        [
-          276.89082465800124,
-          2060.2911706533146
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "image6.jpg",
-  "imageData": null,
-  "imageHeight": 2850,
-  "imageWidth": 1280,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.014769974616824529,
+                       "label":  "little",
+                       "points":  [
+                                      [
+                                          304.0,
+                                          225.0
+                                      ],
+                                      [
+                                          1017.7044134372366,
+                                          235.54216268001827
+                                      ],
+                                      [
+                                          990.5952380952378,
+                                          2070.833333333333
+                                      ],
+                                      [
+                                          276.89082465800124,
+                                          2060.2911706533146
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "image6.jpg",
+    "imageData":  null,
+    "imageHeight":  2850,
+    "imageWidth":  1280,
+    "description":  ""
 }

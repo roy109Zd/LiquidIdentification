@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.0,
-      "label": "none",
-      "score": 0.8521089553833008,
-      "points": [
-        [
-          531.0,
-          676.0
-        ],
-        [
-          956.0,
-          676.0
-        ],
-        [
-          956.0,
-          1998.0
-        ],
-        [
-          531.0,
-          1998.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "piwater_none02.jpg",
-  "imageData": null,
-  "imageHeight": 3280,
-  "imageWidth": 1472,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.0,
+                       "label":  "none",
+                       "points":  [
+                                      [
+                                          531.0,
+                                          676.0
+                                      ],
+                                      [
+                                          956.0,
+                                          676.0
+                                      ],
+                                      [
+                                          956.0,
+                                          1998.0
+                                      ],
+                                      [
+                                          531.0,
+                                          1998.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "piwater_none02.jpg",
+    "imageData":  null,
+    "imageHeight":  3280,
+    "imageWidth":  1472,
+    "description":  ""
 }

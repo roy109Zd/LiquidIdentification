@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 6.2692419877444845,
-      "label": "mid",
-      "score": 0.9220834970474243,
-      "points": [
-        [
-          377.0,
-          391.0
-        ],
-        [
-          879.0,
-          384.0
-        ],
-        [
-          902.0,
-          2105.0
-        ],
-        [
-          400.0,
-          2112.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "teamiddle05.jpg",
-  "imageData": null,
-  "imageHeight": 3280,
-  "imageWidth": 1472,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  6.2692419877444845,
+                       "label":  "mid",
+                       "points":  [
+                                      [
+                                          377.0,
+                                          391.0
+                                      ],
+                                      [
+                                          879.0,
+                                          384.0
+                                      ],
+                                      [
+                                          902.0,
+                                          2105.0
+                                      ],
+                                      [
+                                          400.0,
+                                          2112.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "teamiddle05.jpg",
+    "imageData":  null,
+    "imageHeight":  3280,
+    "imageWidth":  1472,
+    "description":  ""
 }

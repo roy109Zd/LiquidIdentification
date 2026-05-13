@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 5.5176520800333035,
-      "label": "little",
-      "score": 0.36398395895957947,
-      "points": [
-        [
-          -17.0,
-          739.0
-        ],
-        [
-          214.0,
-          517.0
-        ],
-        [
-          1008.0,
-          1348.0
-        ],
-        [
-          776.0,
-          1570.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB73.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  5.5176520800333035,
+                       "label":  "little",
+                       "points":  [
+                                      [
+                                          -17.0,
+                                          739.0
+                                      ],
+                                      [
+                                          214.0,
+                                          517.0
+                                      ],
+                                      [
+                                          1008.0,
+                                          1348.0
+                                      ],
+                                      [
+                                          776.0,
+                                          1570.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB73.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

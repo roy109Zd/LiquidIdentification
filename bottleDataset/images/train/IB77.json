@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 5.8869322885497,
-      "label": "none",
-      "score": 0.7395179271697998,
-      "points": [
-        [
-          138.02381904105926,
-          1071.7693679123638
-        ],
-        [
-          1055.125,
-          688.0694444444445
-        ],
-        [
-          1170.1365570375133,
-          962.9645599548048
-        ],
-        [
-          253.0353760785726,
-          1346.664483422724
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB77.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  5.8869322885497,
+                       "label":  "none",
+                       "points":  [
+                                      [
+                                          138.02381904105926,
+                                          1071.7693679123638
+                                      ],
+                                      [
+                                          1055.125,
+                                          688.0694444444445
+                                      ],
+                                      [
+                                          1170.1365570375133,
+                                          962.9645599548048
+                                      ],
+                                      [
+                                          253.0353760785726,
+                                          1346.664483422724
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB77.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

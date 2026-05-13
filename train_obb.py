@@ -21,12 +21,20 @@ LABEL_SETS = {
         "nc": 2,
         "names": ["none", "exist"],
     },
+    "bottle": {
+        "label_dir": "label_bottle",
+        "nc": 1,
+        "names": ["bottle"],
+    },
 }
 LABEL_SET_ALIASES = {
     "0123": "0123",
     "labels_0123": "0123",
     "01": "01",
     "labels_01": "01",
+    "bottle": "bottle",
+    "label_bottle": "bottle",
+    "labels_bottle": "bottle",
 }
 
 
@@ -49,13 +57,30 @@ def parse_args():
         "--label-set",
         choices=sorted(LABEL_SET_ALIASES),
         default="0123",
-        help="Use 4-class labels_0123 or binary labels_01.",
+        help="Use 4-class labels_0123, binary labels_01, or single-class label_bottle.",
     )
     parser.add_argument("--dataset", default=str(DEFAULT_DATASET), help="Dataset root containing images and label sets.")
     parser.add_argument("--view-root", default=str(DEFAULT_VIEW_ROOT), help="Where to build temporary YOLO dataset views.")
     parser.add_argument("--prepare-data-only", action="store_true", help="Build the selected dataset view and print its yaml path.")
     parser.add_argument("--resume", action="store_true", help="Resume the latest interrupted training run.")
     parser.add_argument("--exist-ok", action="store_true", help="Allow writing into an existing run directory.")
+    parser.add_argument(
+        "--augment-geom",
+        action="store_true",
+        help="Enable geometry augmentation by passing rotation and translation settings to Ultralytics.",
+    )
+    parser.add_argument(
+        "--degrees",
+        type=float,
+        default=None,
+        help="Maximum image rotation degrees for augmentation. Used with --augment-geom or when set explicitly.",
+    )
+    parser.add_argument(
+        "--translate",
+        type=float,
+        default=None,
+        help="Maximum image translation as a fraction of image size. Used with --augment-geom or when set explicitly.",
+    )
     return parser.parse_args()
 
 
@@ -158,18 +183,26 @@ def main():
     from ultralytics import YOLO
 
     model = YOLO(str(model_path))
+    train_kwargs = {
+        "data": str(data_path),
+        "epochs": args.epochs,
+        "imgsz": args.imgsz,
+        "batch": args.batch,
+        "device": args.device,
+        "workers": args.workers,
+        "project": args.project,
+        "name": run_name,
+        "task": "obb",
+        "resume": args.resume,
+        "exist_ok": args.exist_ok,
+    }
+    if args.augment_geom or args.degrees is not None:
+        train_kwargs["degrees"] = 10.0 if args.degrees is None else args.degrees
+    if args.augment_geom or args.translate is not None:
+        train_kwargs["translate"] = 0.1 if args.translate is None else args.translate
+
     model.train(
-        data=str(data_path),
-        epochs=args.epochs,
-        imgsz=args.imgsz,
-        batch=args.batch,
-        device=args.device,
-        workers=args.workers,
-        project=args.project,
-        name=run_name,
-        task="obb",
-        resume=args.resume,
-        exist_ok=args.exist_ok,
+        **train_kwargs,
     )
 
 

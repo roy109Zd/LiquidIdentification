@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 6.195569182904284,
-      "label": "none",
-      "score": 0.9364411234855652,
-      "points": [
-        [
-          383.95856085649524,
-          59.30270896939578
-        ],
-        [
-          756.4893298719489,
-          26.579229069566964
-        ],
-        [
-          866.041439143505,
-          1264.697291030604
-        ],
-        [
-          493.47228231896327,
-          1298.420033846844
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB11.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  6.195569182904284,
+                       "label":  "none",
+                       "points":  [
+                                      [
+                                          383.95856085649524,
+                                          59.30270896939578
+                                      ],
+                                      [
+                                          756.4893298719489,
+                                          26.579229069566964
+                                      ],
+                                      [
+                                          866.041439143505,
+                                          1264.697291030604
+                                      ],
+                                      [
+                                          493.47228231896327,
+                                          1298.420033846844
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB11.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

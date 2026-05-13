@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.24826349410905463,
-      "label": "little",
-      "score": 0.8116549253463745,
-      "points": [
-        [
-          81.0,
-          862.0
-        ],
-        [
-          1083.0,
-          1116.0
-        ],
-        [
-          991.0,
-          1479.0
-        ],
-        [
-          -10.0,
-          1225.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB40.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.24826349410905463,
+                       "label":  "little",
+                       "points":  [
+                                      [
+                                          81.0,
+                                          862.0
+                                      ],
+                                      [
+                                          1083.0,
+                                          1116.0
+                                      ],
+                                      [
+                                          991.0,
+                                          1479.0
+                                      ],
+                                      [
+                                          -10.0,
+                                          1225.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB40.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

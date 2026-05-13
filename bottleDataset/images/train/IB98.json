@@ -1,0 +1,49 @@
+{
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  6.282866998445519,
+                       "label":  "little",
+                       "points":  [
+                                      [
+                                          554.4883232170048,
+                                          352.6455979008335
+                                      ],
+                                      [
+                                          843.6612671925485,
+                                          352.5535516240016
+                                      ],
+                                      [
+                                          844.5116767829952,
+                                          1351.1321798769445
+                                      ],
+                                      [
+                                          555.3387328074515,
+                                          1351.224226153776
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB98.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
+}

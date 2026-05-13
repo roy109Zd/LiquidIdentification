@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.0,
-      "label": "mid",
-      "score": 0.8938982486724854,
-      "points": [
-        [
-          226.0,
-          274.79629629629625
-        ],
-        [
-          721.7222222222224,
-          274.79629629629625
-        ],
-        [
-          721.7222222222224,
-          1675.0
-        ],
-        [
-          226.0,
-          1675.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "image2.jpg",
-  "imageData": null,
-  "imageHeight": 2282,
-  "imageWidth": 1024,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.0,
+                       "label":  "mid",
+                       "points":  [
+                                      [
+                                          226.0,
+                                          274.79629629629625
+                                      ],
+                                      [
+                                          721.7222222222224,
+                                          274.79629629629625
+                                      ],
+                                      [
+                                          721.7222222222224,
+                                          1675.0
+                                      ],
+                                      [
+                                          226.0,
+                                          1675.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "image2.jpg",
+    "imageData":  null,
+    "imageHeight":  2282,
+    "imageWidth":  1024,
+    "description":  ""
 }

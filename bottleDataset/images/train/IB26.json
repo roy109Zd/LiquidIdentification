@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0,
-      "label": "little",
-      "score": null,
-      "points": [
-        [
-          400.95833333333337,
-          328.347222222222
-        ],
-        [
-          842.6250000000001,
-          328.347222222222
-        ],
-        [
-          842.6250000000001,
-          1283.9027777777776
-        ],
-        [
-          400.95833333333337,
-          1283.9027777777776
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB26.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0,
+                       "label":  "little",
+                       "points":  [
+                                      [
+                                          400.95833333333337,
+                                          328.347222222222
+                                      ],
+                                      [
+                                          842.6250000000001,
+                                          328.347222222222
+                                      ],
+                                      [
+                                          842.6250000000001,
+                                          1283.9027777777776
+                                      ],
+                                      [
+                                          400.95833333333337,
+                                          1283.9027777777776
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB26.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

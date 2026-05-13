@@ -4,10 +4,11 @@ Bottle liquid-level identification with YOLO OBB
 
 ## 中文说明
 
-本项目使用 Ultralytics YOLO OBB 模型识别瓶中液体状态，支持两套标签：
+本项目使用 Ultralytics YOLO OBB 模型识别瓶中液体状态，支持三套标签：
 
 - `labels_0123`：四分类，`0=none`，`1=little`，`2=mid`，`3=much`
 - `labels_01`：二分类，`0=none`，`1=exist`
+- `label_bottle`：单类瓶子检测，`0=bottle`
 
 ### 数据集
 
@@ -33,7 +34,11 @@ bottleDataset/
     train/
     val/
     test/
-  labels -> labels_0123 或 labels_01
+  label_bottle/
+    train/
+    val/
+    test/
+  labels -> labels_0123、labels_01 或 label_bottle
 ```
 
 `bottleDataset/labels` 是由 `train_obb.py` 自动创建的当前标签入口，Ultralytics 默认会从 `images` 推导并查找同级的 `labels`，所以训练脚本会在启动前把 `labels` 指向所选标签集
@@ -53,6 +58,7 @@ class x1 y1 x2 y2 x3 y3 x4 y4
 - 将原始 `labels` 重命名为 `labels_0123`
 - 根据 `labels_0123` 创建 `labels_01`
 - 将类别按 `0 -> 0`、`1/2/3 -> 1` 转换
+- 根据 `labels_0123` 创建 `label_bottle`，将所有类别统一为 `0=bottle`
 - 按类别分层划分 `train`、`val`、`test`
 
 默认比例是 `8:1:1`：
@@ -134,18 +140,31 @@ python train_obb.py --model yolo11m-obb.pt --label-set labels_0123 --epochs 200 
 python train_obb.py --model yolo11m-obb.pt --label-set labels_01 --epochs 200 --imgsz 640 --batch 4 --device 0 --workers 2 --name bottle_01_yolo11m_640_b4
 ```
 
+训练单类 `bottle` 模型：
+
+```bash
+python train_obb.py --model yolo11m-obb.pt --label-set label_bottle --epochs 200 --imgsz 640 --batch 4 --device 0 --workers 2 --name bottle_only_yolo11m_640_b4
+```
+
+启用位移和旋转数据增强：
+
+```bash
+python train_obb.py --model yolo11m-obb.pt --label-set label_bottle --epochs 200 --imgsz 640 --batch 4 --device 0 --workers 2 --name bottle_only_aug_yolo11m_640_b4 --augment-geom --degrees 10 --translate 0.1
+```
+
 `--label-set` 支持长写和短写：
 
 ```text
 labels_0123 或 0123
 labels_01   或 01
+label_bottle 或 bottle
 ```
 
 常用参数：
 
 ```text
 --model      预训练 OBB 权重，例如 yolo11m-obb.pt
---label-set  选择 labels_0123 或 labels_01
+--label-set  选择 labels_0123、labels_01 或 label_bottle
 --epochs     训练轮数
 --imgsz      训练图片尺寸
 --batch      batch size
@@ -154,6 +173,9 @@ labels_01   或 01
 --name       runs/obb/ 下的输出目录名
 --resume     继续中断的训练
 --exist-ok   允许写入已有输出目录
+--augment-geom 启用位移和旋转数据增强
+--degrees    最大旋转角度，默认随 --augment-geom 使用 10
+--translate  最大位移比例，默认随 --augment-geom 使用 0.1
 ```
 
 只检查会使用哪个 dataset yaml，不启动训练：
@@ -161,9 +183,10 @@ labels_01   或 01
 ```bash
 python train_obb.py --label-set labels_01 --prepare-data-only
 python train_obb.py --label-set labels_0123 --prepare-data-only
+python train_obb.py --label-set label_bottle --prepare-data-only
 ```
 
-使用 `--label-set` 时不要再传 `--data bottle_obb.yaml`，否则脚本无法自动切换 `labels_01` 和 `labels_0123`
+使用 `--label-set` 时不要再传 `--data bottle_obb.yaml`，否则脚本无法自动切换不同标签集
 
 在 zsh 中写多行命令时，`\` 必须是该行最后一个字符，后面不能有空格
 
@@ -251,10 +274,11 @@ yolo predict model=runs/obb/bottle_01_yolo11m_640_b4/weights/best.pt source=runs
 
 ## English
 
-This project uses Ultralytics YOLO OBB to identify the liquid state in bottle images and supports two label sets:
+This project uses Ultralytics YOLO OBB to identify the liquid state in bottle images and supports three label sets:
 
 - `labels_0123`: four classes, `0=none`, `1=little`, `2=mid`, `3=much`
 - `labels_01`: binary classes, `0=none`, `1=exist`
+- `label_bottle`: single-class bottle detection, `0=bottle`
 
 ### Dataset
 
@@ -280,7 +304,11 @@ bottleDataset/
     train/
     val/
     test/
-  labels -> labels_0123 or labels_01
+  label_bottle/
+    train/
+    val/
+    test/
+  labels -> labels_0123, labels_01, or label_bottle
 ```
 
 `bottleDataset/labels` is the active label entry created by `train_obb.py`, Ultralytics derives the label path from `images` and looks for a sibling `labels` directory, so the training script points `labels` to the selected label set before training starts
@@ -300,6 +328,7 @@ The first value is the class id, and the following eight values are normalized c
 - rename the original `labels` directory to `labels_0123`
 - create `labels_01` from `labels_0123`
 - convert classes with `0 -> 0` and `1/2/3 -> 1`
+- create `label_bottle` from `labels_0123` and convert every class to `0=bottle`
 - split images and labels into `train`, `val`, and `test` with stratified class balance
 
 The default split ratio is `8:1:1`:
@@ -381,18 +410,31 @@ Train the binary `none/exist` model:
 python train_obb.py --model yolo11m-obb.pt --label-set labels_01 --epochs 200 --imgsz 640 --batch 4 --device 0 --workers 2 --name bottle_01_yolo11m_640_b4
 ```
 
+Train the single-class `bottle` model:
+
+```bash
+python train_obb.py --model yolo11m-obb.pt --label-set label_bottle --epochs 200 --imgsz 640 --batch 4 --device 0 --workers 2 --name bottle_only_yolo11m_640_b4
+```
+
+Enable translation and rotation augmentation:
+
+```bash
+python train_obb.py --model yolo11m-obb.pt --label-set label_bottle --epochs 200 --imgsz 640 --batch 4 --device 0 --workers 2 --name bottle_only_aug_yolo11m_640_b4 --augment-geom --degrees 10 --translate 0.1
+```
+
 `--label-set` accepts both long and short names:
 
 ```text
 labels_0123 or 0123
 labels_01   or 01
+label_bottle or bottle
 ```
 
 Useful training parameters:
 
 ```text
 --model      pretrained OBB weights, for example yolo11m-obb.pt
---label-set  choose labels_0123 or labels_01
+--label-set  choose labels_0123, labels_01, or label_bottle
 --epochs     number of training epochs
 --imgsz      training image size
 --batch      batch size
@@ -401,6 +443,9 @@ Useful training parameters:
 --name       output run directory under runs/obb/
 --resume     resume an interrupted run
 --exist-ok   allow writing into an existing output directory
+--augment-geom enable translation and rotation augmentation
+--degrees    maximum rotation degrees, defaults to 10 with --augment-geom
+--translate  maximum translation fraction, defaults to 0.1 with --augment-geom
 ```
 
 Check which dataset yaml will be used without starting training:
@@ -408,9 +453,10 @@ Check which dataset yaml will be used without starting training:
 ```bash
 python train_obb.py --label-set labels_01 --prepare-data-only
 python train_obb.py --label-set labels_0123 --prepare-data-only
+python train_obb.py --label-set label_bottle --prepare-data-only
 ```
 
-Do not pass `--data bottle_obb.yaml` when using `--label-set`, otherwise the script cannot switch between `labels_01` and `labels_0123`
+Do not pass `--data bottle_obb.yaml` when using `--label-set`, otherwise the script cannot switch between label sets
 
 When writing multi-line commands in zsh, make sure `\` is the last character on the line, with no trailing spaces
 

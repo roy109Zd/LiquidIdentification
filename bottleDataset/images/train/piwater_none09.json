@@ -1,102 +1,119 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.0,
-      "label": "none",
-      "score": 0.7941912412643433,
-      "points": [
-        [
-          457.0,
-          637.0
-        ],
-        [
-          1311.0,
-          637.0
-        ],
-        [
-          1311.0,
-          2868.0
-        ],
-        [
-          457.0,
-          2868.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    },
-    {
-      "direction": 0.0,
-      "label": "bottle",
-      "score": 0.4807269871234894,
-      "points": [
-        [
-          1426.0,
-          102.0
-        ],
-        [
-          1623.0,
-          102.0
-        ],
-        [
-          1623.0,
-          835.0
-        ],
-        [
-          1426.0,
-          835.0
-        ]
-      ],
-      "group_id": null,
-      "description": null,
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    },
-    {
-      "direction": 0.015746729849868822,
-      "label": "bottle",
-      "score": 0.4363923966884613,
-      "points": [
-        [
-          1440.0,
-          20.0
-        ],
-        [
-          1821.0,
-          26.0
-        ],
-        [
-          1802.0,
-          1236.0
-        ],
-        [
-          1421.0,
-          1229.0
-        ]
-      ],
-      "group_id": null,
-      "description": null,
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "piwater_none09.jpg",
-  "imageData": null,
-  "imageHeight": 4080,
-  "imageWidth": 1832,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.0,
+                       "label":  "none",
+                       "points":  [
+                                      [
+                                          457.0,
+                                          637.0
+                                      ],
+                                      [
+                                          1311.0,
+                                          637.0
+                                      ],
+                                      [
+                                          1311.0,
+                                          2868.0
+                                      ],
+                                      [
+                                          457.0,
+                                          2868.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   },
+                   {
+                       "direction":  0.0,
+                       "label":  "bottle",
+                       "points":  [
+                                      [
+                                          1426.0,
+                                          102.0
+                                      ],
+                                      [
+                                          1623.0,
+                                          102.0
+                                      ],
+                                      [
+                                          1623.0,
+                                          835.0
+                                      ],
+                                      [
+                                          1426.0,
+                                          835.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  null,
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   },
+                   {
+                       "direction":  0.015746729849868822,
+                       "label":  "bottle",
+                       "points":  [
+                                      [
+                                          1440.0,
+                                          20.0
+                                      ],
+                                      [
+                                          1821.0,
+                                          26.0
+                                      ],
+                                      [
+                                          1802.0,
+                                          1236.0
+                                      ],
+                                      [
+                                          1421.0,
+                                          1229.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  null,
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "piwater_none09.jpg",
+    "imageData":  null,
+    "imageHeight":  4080,
+    "imageWidth":  1832,
+    "description":  ""
 }

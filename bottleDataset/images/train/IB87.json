@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.10862544990132991,
-      "label": "none",
-      "score": 0.8938806056976318,
-      "points": [
-        [
-          142.7211411158462,
-          816.3595110601926
-        ],
-        [
-          1214.671165739545,
-          933.2607183289502
-        ],
-        [
-          1182.416317945805,
-          1229.0282787720487
-        ],
-        [
-          110.46629332210614,
-          1112.1270715032913
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB87.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.10862544990132991,
+                       "label":  "none",
+                       "points":  [
+                                      [
+                                          142.7211411158462,
+                                          816.3595110601926
+                                      ],
+                                      [
+                                          1214.671165739545,
+                                          933.2607183289502
+                                      ],
+                                      [
+                                          1182.416317945805,
+                                          1229.0282787720487
+                                      ],
+                                      [
+                                          110.46629332210614,
+                                          1112.1270715032913
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB87.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

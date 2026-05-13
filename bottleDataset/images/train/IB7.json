@@ -1,72 +1,84 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.8796459430051429,
-      "label": "little",
-      "score": null,
-      "points": [
-        [
-          943.4819186009807,
-          394.14162731184473
-        ],
-        [
-          1191.2361111111109,
-          693.6250000000001
-        ],
-        [
-          186.2125258434635,
-          1525.0528171325998
-        ],
-        [
-          -61.54166666666663,
-          1225.5694444444443
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    },
-    {
-      "direction": 0.8796459430051429,
-      "label": "little",
-      "score": null,
-      "points": [
-        [
-          941.4819186009807,
-          392.14162731184473
-        ],
-        [
-          1189.2361111111109,
-          691.6250000000001
-        ],
-        [
-          184.2125258434635,
-          1523.0528171325998
-        ],
-        [
-          -63.54166666666663,
-          1223.5694444444443
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB7.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.8796459430051429,
+                       "label":  "little",
+                       "points":  [
+                                      [
+                                          943.4819186009807,
+                                          394.14162731184473
+                                      ],
+                                      [
+                                          1191.2361111111109,
+                                          693.6250000000001
+                                      ],
+                                      [
+                                          186.2125258434635,
+                                          1525.0528171325998
+                                      ],
+                                      [
+                                          -61.54166666666663,
+                                          1225.5694444444443
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   },
+                   {
+                       "direction":  0.8796459430051429,
+                       "label":  "little",
+                       "points":  [
+                                      [
+                                          941.4819186009807,
+                                          392.14162731184473
+                                      ],
+                                      [
+                                          1189.2361111111109,
+                                          691.6250000000001
+                                      ],
+                                      [
+                                          184.2125258434635,
+                                          1523.0528171325998
+                                      ],
+                                      [
+                                          -63.54166666666663,
+                                          1223.5694444444443
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB7.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }
