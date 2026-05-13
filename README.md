@@ -2,6 +2,10 @@
 
 Bottle liquid-level identification with YOLO OBB
 
+环境配置：见 [ENVIRONMENT.md](ENVIRONMENT.md)
+
+Environment setup: see [ENVIRONMENT.md](ENVIRONMENT.md)
+
 ## 中文说明
 
 本项目使用 Ultralytics YOLO OBB 模型识别瓶中液体状态，支持三套标签：
