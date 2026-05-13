@@ -40,7 +40,11 @@ LABEL_SET_ALIASES = {
 
 def parse_args():
     parser = ArgumentParser(description="Train YOLO11m-OBB on the bottle dataset.")
-    parser.add_argument("--model", default=str(DEFAULT_MODEL), help="Path to the OBB pretrained weights.")
+    parser.add_argument(
+        "--model",
+        default=DEFAULT_MODEL.name,
+        help="Local weights path or supported Ultralytics model name. Local files are used first.",
+    )
     parser.add_argument(
         "--data",
         default=None,
@@ -121,6 +125,23 @@ def yaml_path(path: Path) -> str:
     return str(path.resolve()).replace("\\", "/")
 
 
+def resolve_model(model: str) -> str:
+    model_path = Path(model)
+    if model_path.exists():
+        return str(model_path)
+
+    if not model_path.is_absolute() and model_path.parent == Path("."):
+        root_model = ROOT / model
+        if root_model.exists():
+            return str(root_model)
+        return model
+
+    raise FileNotFoundError(
+        f"Model weights not found: {model}. "
+        "Use an existing local path or a supported Ultralytics model name, for example yolo11m-obb.pt."
+    )
+
+
 def write_dataset_yaml(path: Path, view_dir: Path, label_set: str):
     config = LABEL_SETS[label_set]
     names = "\n".join(f"  {idx}: {name}" for idx, name in enumerate(config["names"]))
@@ -166,15 +187,13 @@ def prepare_dataset_view(dataset: Path, view_root: Path, label_set: str) -> Path
 def main():
     args = parse_args()
 
-    model_path = Path(args.model)
+    model_arg = resolve_model(args.model)
     label_set = LABEL_SET_ALIASES[args.label_set]
     data_path = Path(args.data) if args.data else prepare_dataset_view(Path(args.dataset), Path(args.view_root), label_set)
     if args.prepare_data_only:
         print(data_path)
         return
 
-    if not model_path.exists():
-        raise FileNotFoundError(f"Model weights not found: {model_path}")
     if not data_path.exists():
         raise FileNotFoundError(f"Dataset yaml not found: {data_path}")
 
@@ -182,7 +201,7 @@ def main():
 
     from ultralytics import YOLO
 
-    model = YOLO(str(model_path))
+    model = YOLO(model_arg)
     train_kwargs = {
         "data": str(data_path),
         "epochs": args.epochs,

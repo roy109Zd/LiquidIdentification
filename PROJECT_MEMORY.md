@@ -66,6 +66,7 @@ If CUDA memory is insufficient, reduce `--batch 4` to `--batch 2`
 
 ## Maintenance Notes
 
+- `train_obb.py --model` prefers local files in the current path or repo root; bare Ultralytics model names are passed through so Ultralytics can download them when no local file exists
 - Keep README updates synchronized with script behavior
 - Keep generated YOLO runs under `runs/obb/`; delete failed or accidental runs only after checking the exact directory
 - Keep `.dataset_views/`, `runs/`, model weights, and cache files out of git

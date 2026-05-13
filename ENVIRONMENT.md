@@ -47,6 +47,8 @@ pip install -r requirements.txt
 
 如果需要 GPU 训练，请先按本机 CUDA 驱动安装对应的 PyTorch GPU 版本，再安装 `requirements.txt`
 
+训练脚本会优先使用项目目录下的本地权重文件；如果传入 `yolo11m-obb.pt` 这类 Ultralytics 支持的裸模型名且本地不存在，会由 Ultralytics 自动下载
+
 ### 项目已有推荐环境
 
 当前机器可直接使用已有的 `torchforge` 环境：
@@ -142,6 +144,8 @@ pip install -r requirements.txt
 ```
 
 For GPU training, install the PyTorch GPU build that matches the local CUDA driver before installing `requirements.txt`
+
+The training script prefers project-local weight files; if the value is a bare Ultralytics-supported model name such as `yolo11m-obb.pt` and no local file exists, Ultralytics will download it automatically
 
 ### Existing Recommended Environment
 

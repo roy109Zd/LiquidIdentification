@@ -182,6 +182,8 @@ label_bottle 或 bottle
 --translate  最大位移比例，默认随 --augment-geom 使用 0.1
 ```
 
+`--model` 会优先使用本地文件，例如项目目录下存在 `yolo11m-obb.pt` 时会直接加载本地权重；如果传入的是 `yolo11m-obb.pt` 这类 Ultralytics 支持的裸模型名且本地不存在，会交给 Ultralytics 自动下载
+
 只检查会使用哪个 dataset yaml，不启动训练：
 
 ```bash
@@ -451,6 +453,8 @@ Useful training parameters:
 --degrees    maximum rotation degrees, defaults to 10 with --augment-geom
 --translate  maximum translation fraction, defaults to 0.1 with --augment-geom
 ```
+
+`--model` prefers local files, so a project-local `yolo11m-obb.pt` is loaded directly; if the value is a bare Ultralytics-supported model name such as `yolo11m-obb.pt` and no local file exists, Ultralytics will download it automatically
 
 Check which dataset yaml will be used without starting training:
 
