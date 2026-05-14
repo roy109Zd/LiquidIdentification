@@ -45,6 +45,8 @@ python -m pip install -U pip setuptools wheel
 pip install -r requirements.txt
 ```
 
+`requirements.txt` 包含 `ultralytics`、`numpy`、`opencv-python`、`scikit-learn`、`joblib` 和 `tqdm`，可覆盖 YOLO 训练、分割预处理和决策树训练脚本
+
 如果需要 GPU 训练，请先按本机 CUDA 驱动安装对应的 PyTorch GPU 版本，再安装 `requirements.txt`
 
 训练脚本会优先使用项目目录下的本地权重文件；如果传入 `yolo11m-obb.pt` 这类 Ultralytics 支持的裸模型名且本地不存在，会由 Ultralytics 自动下载
@@ -142,6 +144,8 @@ Install project dependencies:
 ```bash
 pip install -r requirements.txt
 ```
+
+`requirements.txt` includes `ultralytics`, `numpy`, `opencv-python`, `scikit-learn`, `joblib`, and `tqdm`, covering YOLO training, segmentation preprocessing, and decision-tree training
 
 For GPU training, install the PyTorch GPU build that matches the local CUDA driver before installing `requirements.txt`
 

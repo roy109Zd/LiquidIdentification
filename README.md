@@ -104,6 +104,80 @@ three_quarters_level -> much
 python convert_roboflow_yolo_to_obb.py --source path/to/roboflow_dataset --output importedDataset --class-map bottle=none level=mid --overwrite
 ```
 
+### 分割后决策树数据
+
+`prepare_tree_segments.py` 用于给后续决策树训练准备数据。默认不使用任何已有模型，而是直接读取 YOLO OBB 标签的四点框生成 mask，只保留 mask 内的图像区域，再保存分割后的图片和一份 `features.csv`
+
+```bash
+python prepare_tree_segments.py --label-set labels_0123 --output runs/tree_segments --overwrite
+```
+
+`train_tree_classifier.py` 会把分割预处理和决策树训练串起来，中间会自动生成并读取同一份 `features.csv`
+
+```bash
+python train_tree_classifier.py --label-set labels_0123 --segments-output runs/tree_segments_0123 --tree-output runs/tree_classifier_0123 --overwrite-segments --max-depth 5 --min-samples-leaf 3
+```
+
+如果已经有 `features.csv`，可以跳过分割直接训练：
+
+```bash
+python train_tree_classifier.py --features runs/tree_segments/features.csv --tree-output runs/tree_classifier --max-depth 5 --min-samples-leaf 3
+```
+
+常用参数：
+
+```text
+--model       可选项目训练权重，必须位于 runs/obb/ 下；不传时使用标签四点框生成 mask
+--label-set   读取识别标签的标签集，例如 labels_0123、labels_01 或 label_bottle
+--conf        使用模型自动生成 mask 时的置信度筛选阈值，默认 0.25
+--background  mask 外背景，可选 black、white、transparent
+--crop        将输出图片裁剪到 mask 外接框
+--select      多个 mask 时选择 highest-conf 或 largest-mask
+--class-id    只保留指定分割类别
+--no-progress 关闭 tqdm 进度条
+```
+
+决策树会使用 `segment_features.py` 中定义的可解释特征：
+
+```text
+mask 几何：mask 面积比例、外接框宽高比例、mask 填充率、mask 中心位置
+整体颜色：RGB/HSV 均值和标准差、暗像素比例、亮像素比例、高饱和比例
+上下对比：底部和顶部的亮度差、饱和度差、亮度重心、饱和度重心
+分层统计：从上到下 5 个水平带的 HSV 均值、暗亮比例、mask 占比
+边缘特征：边缘密度、水平边缘强度
+```
+
+决策树训练输出：
+
+```text
+runs/tree_classifier/
+  decision_tree.joblib
+  metrics.json
+  tree_rules.txt
+  feature_importances.csv
+```
+
+输出结构：
+
+```text
+runs/tree_segments/
+  images/
+    train/
+    val/
+    test/
+  features.csv
+```
+
+`features.csv` 会记录分割后的图片路径、原标签、mask 几何、颜色、分层和边缘特征，后续也可作为随机森林等其他分类算法的输入
+
+如果需要自动打标，只允许使用本项目前面 `train_obb.py` 训练出的权重，例如：
+
+```bash
+python train_tree_classifier.py --label-model runs/obb/bottle_01_yolo11m_640_b4/weights/best.pt --label-set labels_0123 --segments-output runs/tree_segments_0123_model_labeled --tree-output runs/tree_classifier_0123_model_labeled --overwrite-segments --max-depth 5 --min-samples-leaf 3
+```
+
+`--label-model` 只接受 `runs/obb/` 下的项目训练权重，不接受 `yolo11n-seg.pt` 这类外部模型名
+
 当前划分结果：
 
 ```text
@@ -266,6 +340,35 @@ yolo predict model=yolo11m-obb.pt source=/mnt/e/LiquidIdentification/testDataset
 yolo predict model=runs/obb/<run_name>/weights/best.pt source=/mnt/e/LiquidIdentification/testDataset/images
 ```
 
+常用预测参数：
+
+```text
+conf=0.5           只保留置信度大于等于 0.5 的预测框
+iou=0.5            NMS 去重的 IoU 阈值，越低去重越严格
+imgsz=640          推理输入尺寸，通常和训练时保持一致
+device=0           使用第 0 张 GPU，CPU 推理可写 device=cpu
+save=True          保存带预测框的可视化图片
+save_txt=True      保存预测标签文本
+save_conf=True     在预测标签文本中额外保存置信度
+project=runs/predict_errors/val_bottle_01  指定输出根目录
+name=pred_conf50   指定本次预测输出目录名
+exist_ok=True      允许写入已有输出目录
+agnostic_nms=True  不同类别之间也参与 NMS 去重
+classes=0          只预测指定类别，单类 bottle 模型通常不需要写
+max_det=10         每张图片最多保留 10 个预测框
+line_width=2       调整可视化框线宽
+show_labels=True   可视化图片显示类别名
+show_conf=True     可视化图片显示置信度
+```
+
+常用筛选和保存命令，例如只保留置信度大于等于 0.5 的结果：
+
+```bash
+yolo predict model=runs/obb/<run_name>/weights/best.pt source=/mnt/e/LiquidIdentification/testDataset/images conf=0.5 save=True save_txt=True save_conf=True
+```
+
+`conf=0.5` 表示丢弃置信度低于 0.5 的预测框，`save_conf=True` 会在导出的标签文本中同时保存每个预测框的置信度，后续排查错例或按置信度二次筛选会更方便
+
 如果预测结果中出现重复框，优先使用 YOLO 原生 NMS 参数重新预测，不要手动改标签后再自绘可视化图：
 
 ```bash
@@ -375,6 +478,80 @@ If the downloaded dataset uses different class names, pass an explicit mapping:
 ```bash
 python convert_roboflow_yolo_to_obb.py --source path/to/roboflow_dataset --output importedDataset --class-map bottle=none level=mid --overwrite
 ```
+
+### Segmented Decision-Tree Data
+
+`prepare_tree_segments.py` prepares data for future decision-tree training. By default it does not use any existing model; it reads YOLO OBB label polygons to build masks, keeps only the masked image region, then writes masked images and a `features.csv`
+
+```bash
+python prepare_tree_segments.py --label-set labels_0123 --output runs/tree_segments --overwrite
+```
+
+`train_tree_classifier.py` connects segmentation preprocessing and decision-tree training, automatically generating and reading the same `features.csv`
+
+```bash
+python train_tree_classifier.py --label-set labels_0123 --segments-output runs/tree_segments_0123 --tree-output runs/tree_classifier_0123 --overwrite-segments --max-depth 5 --min-samples-leaf 3
+```
+
+If `features.csv` already exists, skip segmentation and train directly:
+
+```bash
+python train_tree_classifier.py --features runs/tree_segments/features.csv --tree-output runs/tree_classifier --max-depth 5 --min-samples-leaf 3
+```
+
+Useful parameters:
+
+```text
+--model       optional project-trained weights under runs/obb/; omitted means masks are built from label polygons
+--label-set   label set used as the recognition target, for example labels_0123, labels_01, or label_bottle
+--conf        confidence threshold when a model is used to generate masks, default 0.25
+--background  background outside the mask, one of black, white, transparent
+--crop        crop output images to the mask bounding box
+--select      choose highest-conf or largest-mask when multiple masks exist
+--class-id    keep only one segmentation class id
+--no-progress disable tqdm progress bars
+```
+
+The decision tree uses interpretable features defined in `segment_features.py`:
+
+```text
+mask geometry: mask area ratio, bounding-box proportions, mask fill ratio, mask center
+global color: RGB/HSV mean and std, dark ratio, bright ratio, high-saturation ratio
+vertical contrast: bottom-top brightness difference, saturation difference, brightness center, saturation center
+band statistics: HSV mean, dark/bright ratio, and mask fraction in 5 horizontal bands
+edge features: edge density and horizontal edge strength
+```
+
+Decision-tree outputs:
+
+```text
+runs/tree_classifier/
+  decision_tree.joblib
+  metrics.json
+  tree_rules.txt
+  feature_importances.csv
+```
+
+Output layout:
+
+```text
+runs/tree_segments/
+  images/
+    train/
+    val/
+    test/
+  features.csv
+```
+
+`features.csv` records the masked image path, original label, mask geometry, color, band, and edge features, so it can also be reused by other classifiers such as random forests later
+
+If automatic labeling is needed, only use weights trained earlier by this project through `train_obb.py`, for example:
+
+```bash
+python train_tree_classifier.py --label-model runs/obb/bottle_01_yolo11m_640_b4/weights/best.pt --label-set labels_0123 --segments-output runs/tree_segments_0123_model_labeled --tree-output runs/tree_classifier_0123_model_labeled --overwrite-segments --max-depth 5 --min-samples-leaf 3
+```
+
+`--label-model` only accepts project-trained weights under `runs/obb/`; external model names such as `yolo11n-seg.pt` are not accepted
 
 Current split:
 
@@ -537,6 +714,35 @@ Predict with a trained checkpoint:
 ```bash
 yolo predict model=runs/obb/<run_name>/weights/best.pt source=/mnt/e/LiquidIdentification/testDataset/images
 ```
+
+Common prediction arguments:
+
+```text
+conf=0.5           keep only prediction boxes with confidence at least 0.5
+iou=0.5            IoU threshold for NMS, lower values make suppression stricter
+imgsz=640          inference image size, usually matching the training size
+device=0           use GPU 0, or use device=cpu for CPU inference
+save=True          save visualization images with prediction boxes
+save_txt=True      save prediction label text files
+save_conf=True     also save confidence values in prediction label text files
+project=runs/predict_errors/val_bottle_01  set the output root directory
+name=pred_conf50   set the output directory name for this prediction run
+exist_ok=True      allow writing into an existing output directory
+agnostic_nms=True  allow NMS suppression across different classes
+classes=0          predict only the selected class, usually unnecessary for a single-class bottle model
+max_det=10         keep at most 10 prediction boxes per image
+line_width=2       adjust visualization box line width
+show_labels=True   show class names in visualization images
+show_conf=True     show confidence values in visualization images
+```
+
+Common filtering and saving command, for example keeping predictions with confidence at least 0.5:
+
+```bash
+yolo predict model=runs/obb/<run_name>/weights/best.pt source=/mnt/e/LiquidIdentification/testDataset/images conf=0.5 save=True save_txt=True save_conf=True
+```
+
+`conf=0.5` drops prediction boxes below 0.5 confidence, and `save_conf=True` stores each prediction confidence in the exported label text, which is useful for error analysis or a second confidence-based filtering pass
 
 If duplicate boxes appear in prediction results, prefer YOLO native NMS parameters and rerun prediction instead of editing labels and redrawing visualization images manually:
 

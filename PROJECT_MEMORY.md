@@ -35,6 +35,9 @@ source /root/envs/torchforge/bin/activate
 - Do not pass `--data bottle_obb.yaml` when using `--label-set`, because that bypasses automatic label-set switching
 - Use `convert_roboflow_yolo_to_obb.py` for Roboflow YOLO detection exports that need conversion to this project's OBB label format
 - The default Roboflow mapping is `empty=none`, `half_water_level=mid`, `full_water_level=much`, `three_quarters_level=much`
+- Use `prepare_tree_segments.py` to build masked bottle-region images and `features.csv`; omit `--model` for the model-free path that builds masks from YOLO OBB label polygons
+- If the decision-tree pipeline uses automatic model labeling, only use project-trained weights under `runs/obb/`, not external Ultralytics model names
+- Decision-tree work is split into `segment_features.py` for interpretable features, `decision_tree_classifier.py` for the classifier, and `train_tree_classifier.py` for the seamless segmentation-to-tree training pipeline
 
 ## Preferred Training Commands
 
