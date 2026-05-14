@@ -5,6 +5,9 @@ run/
 runs/
 .dataset_views/
 .tmp/
+downloads/
+LCDTC/
+LCDTC*.aria2.txt
 
 # Ultralytics dataset caches
 *.cache

@@ -5,11 +5,15 @@ import os
 import shutil
 import subprocess
 
+from convert_lcdtc_to_yolo_obb import convert_lcdtc_to_yolo_obb
+
 
 ROOT = Path(__file__).resolve().parent
 DEFAULT_MODEL = ROOT / "yolo11m-obb.pt"
 DEFAULT_DATASET = ROOT / "bottleDataset"
 DEFAULT_VIEW_ROOT = ROOT / ".dataset_views"
+DEFAULT_LCDTC = ROOT / "LCDTC"
+DEFAULT_LCDTC_OUTPUT = DEFAULT_VIEW_ROOT / "lcdtc_obb"
 LABEL_SETS = {
     "0123": {
         "label_dir": "labels_0123",
@@ -66,6 +70,14 @@ def parse_args():
     parser.add_argument("--dataset", default=str(DEFAULT_DATASET), help="Dataset root containing images and label sets.")
     parser.add_argument("--view-root", default=str(DEFAULT_VIEW_ROOT), help="Where to build temporary YOLO dataset views.")
     parser.add_argument("--prepare-data-only", action="store_true", help="Build the selected dataset view and print its yaml path.")
+    parser.add_argument(
+        "--include-lcdtc",
+        action="store_true",
+        help="Convert LCDTC COCO labels to YOLO OBB and include them with the selected dataset.",
+    )
+    parser.add_argument("--lcdtc-root", default=str(DEFAULT_LCDTC), help="LCDTC root containing annotations and images.")
+    parser.add_argument("--lcdtc-output", default=str(DEFAULT_LCDTC_OUTPUT), help="Where to write converted LCDTC YOLO OBB labels.")
+    parser.add_argument("--rebuild-lcdtc", action="store_true", help="Rebuild the converted LCDTC labels before training.")
     parser.add_argument("--resume", action="store_true", help="Resume the latest interrupted training run.")
     parser.add_argument("--exist-ok", action="store_true", help="Allow writing into an existing run directory.")
     parser.add_argument(
@@ -122,7 +134,14 @@ def link_dir(source: Path, target: Path):
 
 
 def yaml_path(path: Path) -> str:
-    return str(path.resolve()).replace("\\", "/")
+    return str(path.absolute()).replace("\\", "/")
+
+
+def yaml_paths(paths) -> str:
+    existing = [Path(path) for path in paths if Path(path).exists()]
+    if not existing:
+        raise FileNotFoundError(f"No existing dataset paths found from: {paths}")
+    return "\n".join(f"  - {yaml_path(path)}" for path in existing)
 
 
 def resolve_model(model: str) -> str:
@@ -157,6 +176,28 @@ def write_dataset_yaml(path: Path, view_dir: Path, label_set: str):
     path.write_text(content, encoding="utf-8")
 
 
+def write_combined_dataset_yaml(path: Path, dataset: Path, lcdtc_dataset: Path, label_set: str):
+    config = LABEL_SETS[label_set]
+    names = "\n".join(f"  {idx}: {name}" for idx, name in enumerate(config["names"]))
+    train_paths = [dataset / "images" / "train", lcdtc_dataset / "images" / "train"]
+    val_paths = [dataset / "images" / "val", lcdtc_dataset / "images" / "val"]
+    test_paths = [dataset / "images" / "test"]
+    content = (
+        f"path: {yaml_path(ROOT)}\n\n"
+        "train:\n"
+        f"{yaml_paths(train_paths)}\n"
+        "val:\n"
+        f"{yaml_paths(val_paths)}\n"
+        "test:\n"
+        f"{yaml_paths(test_paths)}\n\n"
+        f"nc: {config['nc']}\n"
+        "names:\n"
+        f"{names}\n"
+    )
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content, encoding="utf-8")
+
+
 def activate_label_set(dataset: Path, label_set: str):
     config = LABEL_SETS[label_set]
     selected_labels = dataset / config["label_dir"]
@@ -184,12 +225,54 @@ def prepare_dataset_view(dataset: Path, view_root: Path, label_set: str) -> Path
     return data_yaml
 
 
+def prepare_lcdtc_dataset_view(dataset: Path, view_root: Path, label_set: str, lcdtc_root: Path, lcdtc_output: Path, rebuild: bool) -> Path:
+    config = LABEL_SETS[label_set]
+    images = dataset / "images"
+    if not images.exists():
+        raise FileNotFoundError(f"Images directory not found: {images}")
+    activate_label_set(dataset, label_set)
+
+    lcdtc_dataset, summary = convert_lcdtc_to_yolo_obb(lcdtc_root, lcdtc_output, overwrite=rebuild)
+    selected_lcdtc_labels = lcdtc_dataset / config["label_dir"]
+    if not selected_lcdtc_labels.exists():
+        raise FileNotFoundError(f"Converted LCDTC label directory not found: {selected_lcdtc_labels}")
+    link_dir(selected_lcdtc_labels, lcdtc_dataset / "labels")
+
+    view_dir = view_root / f"{config['label_dir']}_with_lcdtc"
+    data_yaml = view_dir / "bottle_obb.yaml"
+    write_combined_dataset_yaml(data_yaml, dataset, lcdtc_dataset, label_set)
+
+    train_stats = summary.get("train", {})
+    val_stats = summary.get("val", {})
+    print(
+        "LCDTC enabled: "
+        f"{train_stats.get('images', 0)} train images, "
+        f"{val_stats.get('images', 0)} val images"
+    )
+    return data_yaml
+
+
 def main():
     args = parse_args()
 
     model_arg = resolve_model(args.model)
     label_set = LABEL_SET_ALIASES[args.label_set]
-    data_path = Path(args.data) if args.data else prepare_dataset_view(Path(args.dataset), Path(args.view_root), label_set)
+    if args.data and args.include_lcdtc:
+        raise ValueError("--include-lcdtc cannot be combined with --data, because --data bypasses dataset view generation.")
+
+    if args.data:
+        data_path = Path(args.data)
+    elif args.include_lcdtc:
+        data_path = prepare_lcdtc_dataset_view(
+            Path(args.dataset),
+            Path(args.view_root),
+            label_set,
+            Path(args.lcdtc_root),
+            Path(args.lcdtc_output),
+            args.rebuild_lcdtc,
+        )
+    else:
+        data_path = prepare_dataset_view(Path(args.dataset), Path(args.view_root), label_set)
     if args.prepare_data_only:
         print(data_path)
         return
