@@ -237,6 +237,10 @@ def prepare_lcdtc_dataset_view(dataset: Path, view_root: Path, label_set: str, l
     if not selected_lcdtc_labels.exists():
         raise FileNotFoundError(f"Converted LCDTC label directory not found: {selected_lcdtc_labels}")
     link_dir(selected_lcdtc_labels, lcdtc_dataset / "labels")
+    lcdtc_source_labels = lcdtc_root / "labels"
+    lcdtc_source_labels.mkdir(parents=True, exist_ok=True)
+    link_dir(selected_lcdtc_labels / "train", lcdtc_source_labels / "train2017")
+    link_dir(selected_lcdtc_labels / "val", lcdtc_source_labels / "val2017")
 
     view_dir = view_root / f"{config['label_dir']}_with_lcdtc"
     data_yaml = view_dir / "bottle_obb.yaml"

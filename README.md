@@ -131,12 +131,18 @@ python train_tree_classifier.py --features runs/tree_segments/features.csv --tre
 python train_tree_classifier.py --features runs/tree_segments/features.csv --tree-output runs/tree_classifier_svm --algorithm rbf-svm --svm-c 3.0 --svm-gamma scale
 ```
 
+一次性训练全部支持的传统机器学习算法，并在最后输出最佳验证集准确率：
+
+```bash
+python train_tree_classifier.py --features runs/tree_segments/features.csv --tree-output runs/tree_classifier_all --algorithm all --n-estimators 300 --max-depth 8 --min-samples-leaf 2 --neighbors 5 --svm-c 3.0 --svm-gamma scale --max-iter 3000
+```
+
 常用参数：
 
 ```text
 --model       可选项目训练权重，必须位于 runs/obb/ 下；不传时使用标签四点框生成 mask
 --label-set   读取识别标签的标签集，例如 labels_0123、labels_01 或 label_bottle
---algorithm   选择分类器：decision-tree、random-forest、extra-trees、gradient-boosting、ada-boost、logistic-regression、linear-svm、rbf-svm、knn、gaussian-nb、mlp
+--algorithm   选择分类器：decision-tree、random-forest、extra-trees、gradient-boosting、ada-boost、logistic-regression、linear-svm、rbf-svm、knn、gaussian-nb、mlp，或 all
 --criterion   决策树、随机森林、ExtraTrees 的分裂准则：gini、entropy、log_loss
 --max-depth   树模型最大深度
 --n-estimators 集成模型的估计器数量
@@ -171,6 +177,7 @@ runs/tree_classifier/
   tree_rules.txt              仅 decision-tree 输出
   feature_importances.csv     树模型/集成树模型输出
   linear_coefficients.csv     线性模型输出
+  algorithm_summary.csv       --algorithm all 时输出
 ```
 
 输出结构：
@@ -522,12 +529,18 @@ python train_tree_classifier.py --features runs/tree_segments/features.csv --tre
 python train_tree_classifier.py --features runs/tree_segments/features.csv --tree-output runs/tree_classifier_svm --algorithm rbf-svm --svm-c 3.0 --svm-gamma scale
 ```
 
+Train every supported classical ML algorithm and print the best validation accuracy at the end:
+
+```bash
+python train_tree_classifier.py --features runs/tree_segments/features.csv --tree-output runs/tree_classifier_all --algorithm all --n-estimators 300 --max-depth 8 --min-samples-leaf 2 --neighbors 5 --svm-c 3.0 --svm-gamma scale --max-iter 3000
+```
+
 Useful parameters:
 
 ```text
 --model       optional project-trained weights under runs/obb/; omitted means masks are built from label polygons
 --label-set   label set used as the recognition target, for example labels_0123, labels_01, or label_bottle
---algorithm   classifier: decision-tree, random-forest, extra-trees, gradient-boosting, ada-boost, logistic-regression, linear-svm, rbf-svm, knn, gaussian-nb, mlp
+--algorithm   classifier: decision-tree, random-forest, extra-trees, gradient-boosting, ada-boost, logistic-regression, linear-svm, rbf-svm, knn, gaussian-nb, mlp, or all
 --criterion   split criterion for decision-tree, random-forest, and extra-trees: gini, entropy, log_loss
 --max-depth   maximum tree depth
 --n-estimators number of estimators for ensemble algorithms
@@ -562,6 +575,7 @@ runs/tree_classifier/
   tree_rules.txt              decision-tree only
   feature_importances.csv     tree and tree-ensemble models
   linear_coefficients.csv     linear models
+  algorithm_summary.csv       written by --algorithm all
 ```
 
 Output layout:

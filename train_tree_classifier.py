@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+import csv
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -80,9 +81,9 @@ def parse_args():
     )
     parser.add_argument(
         "--algorithm",
-        choices=ALGORITHM_CHOICES,
+        choices=(*ALGORITHM_CHOICES, "all"),
         default="decision-tree",
-        help="Classical ML classifier to train.",
+        help="Classical ML classifier to train, or all to run every supported classifier.",
     )
     parser.add_argument(
         "--criterion",
@@ -137,17 +138,66 @@ def build_features_if_needed(args) -> Path:
     return build_segment_dataset(segment_args)
 
 
-def main():
-    args = parse_args()
-    features_csv = build_features_if_needed(args)
+def metric_for_best_split(metrics: dict):
+    splits = metrics.get("splits", {})
+    for split in ("val", "test", "train"):
+        result = splits.get(split)
+        if result is not None:
+            return split, float(result["accuracy"])
+    return None, None
+
+
+def print_result_files(result: dict):
+    print(f"Classifier model: {result['model_path']}")
+    print(f"Metrics: {result['metrics_path']}")
+    if result["rules_path"]:
+        print(f"Rules: {result['rules_path']}")
+    if result["feature_importances_path"]:
+        print(f"Feature importances: {result['feature_importances_path']}")
+    if result["coefficients_path"]:
+        print(f"Linear coefficients: {result['coefficients_path']}")
+
+
+def print_accuracy_summary(rows: list[dict], output_dir: Path):
+    summary_path = output_dir / "algorithm_summary.csv"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    with summary_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=["algorithm", "split", "accuracy", "accuracy_percent", "status", "output_dir"],
+        )
+        writer.writeheader()
+        writer.writerows(rows)
+
+    print("\nAccuracy summary:")
+    print(f"{'algorithm':<20} {'split':<6} {'accuracy':>10}  status")
+    for row in rows:
+        accuracy = row["accuracy"]
+        accuracy_text = "" if accuracy == "" else f"{float(accuracy):.4f}"
+        print(f"{row['algorithm']:<20} {row['split']:<6} {accuracy_text:>10}  {row['status']}")
+
+    successful = [row for row in rows if row["status"] == "ok" and row["accuracy"] != ""]
+    if not successful:
+        raise RuntimeError("No classifier finished successfully; see failed rows above.")
+
+    best = max(successful, key=lambda row: float(row["accuracy"]))
+    print(
+        "\nBest result: "
+        f"{best['algorithm']} on {best['split']} accuracy={float(best['accuracy']):.4f} "
+        f"({best['accuracy_percent']})"
+    )
+    print(f"Summary CSV: {summary_path}")
+
+
+def train_one_algorithm(args, features_csv: Path, algorithm: str, output_dir: Path):
     from decision_tree_classifier import train_classifier
 
-    print(f"Training {args.algorithm} from {features_csv}...")
+    print(f"Training {algorithm} from {features_csv}...")
     result = train_classifier(
         features_csv=features_csv,
-        output_dir=Path(args.tree_output).resolve(),
+        output_dir=output_dir,
         label_column=args.label_column,
-        algorithm=args.algorithm,
+        algorithm=algorithm,
         criterion=args.criterion,
         max_depth=args.max_depth,
         min_samples_leaf=args.min_samples_leaf,
@@ -159,15 +209,52 @@ def main():
         max_iter=args.max_iter,
         hidden_layer_sizes=args.hidden_layer_sizes,
     )
+    print_result_files(result)
+    return result
 
-    print(f"Classifier model: {result['model_path']}")
-    print(f"Metrics: {result['metrics_path']}")
-    if result["rules_path"]:
-        print(f"Rules: {result['rules_path']}")
-    if result["feature_importances_path"]:
-        print(f"Feature importances: {result['feature_importances_path']}")
-    if result["coefficients_path"]:
-        print(f"Linear coefficients: {result['coefficients_path']}")
+
+def main():
+    args = parse_args()
+    features_csv = build_features_if_needed(args)
+    tree_output = Path(args.tree_output).resolve()
+
+    if args.algorithm == "all":
+        rows = []
+        for algorithm in ALGORITHM_CHOICES:
+            algorithm_output = tree_output / algorithm
+            try:
+                result = train_one_algorithm(args, features_csv, algorithm, algorithm_output)
+                split, accuracy = metric_for_best_split(result["metrics"])
+                rows.append(
+                    {
+                        "algorithm": algorithm,
+                        "split": split or "",
+                        "accuracy": "" if accuracy is None else f"{accuracy:.10f}",
+                        "accuracy_percent": "" if accuracy is None else f"{accuracy * 100:.2f}%",
+                        "status": "ok",
+                        "output_dir": str(algorithm_output).replace("\\", "/"),
+                    }
+                )
+            except Exception as exc:
+                print(f"FAILED {algorithm}: {exc}")
+                rows.append(
+                    {
+                        "algorithm": algorithm,
+                        "split": "",
+                        "accuracy": "",
+                        "accuracy_percent": "",
+                        "status": f"failed: {exc}",
+                        "output_dir": str(algorithm_output).replace("\\", "/"),
+                    }
+                )
+
+        print_accuracy_summary(rows, tree_output)
+        return
+
+    result = train_one_algorithm(args, features_csv, args.algorithm, tree_output)
+    split, accuracy = metric_for_best_split(result["metrics"])
+    if accuracy is not None:
+        print(f"\nBest result: {args.algorithm} on {split} accuracy={accuracy:.4f} ({accuracy * 100:.2f}%)")
 
 
 if __name__ == "__main__":
