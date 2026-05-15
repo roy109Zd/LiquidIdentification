@@ -104,15 +104,15 @@ three_quarters_level -> much
 python convert_roboflow_yolo_to_obb.py --source path/to/roboflow_dataset --output importedDataset --class-map bottle=none level=mid --overwrite
 ```
 
-### 分割后决策树数据
+### 分割后传统机器学习数据
 
-`prepare_tree_segments.py` 用于给后续决策树训练准备数据。默认不使用任何已有模型，而是直接读取 YOLO OBB 标签的四点框生成 mask，只保留 mask 内的图像区域，再保存分割后的图片和一份 `features.csv`
+`prepare_tree_segments.py` 用于给后续传统机器学习分类器准备数据。默认不使用任何已有模型，而是直接读取 YOLO OBB 标签的四点框生成 mask，只保留 mask 内的图像区域，再保存分割后的图片和一份 `features.csv`
 
 ```bash
 python prepare_tree_segments.py --label-set labels_0123 --output runs/tree_segments --overwrite
 ```
 
-`train_tree_classifier.py` 会把分割预处理和决策树训练串起来，中间会自动生成并读取同一份 `features.csv`
+`train_tree_classifier.py` 会把分割预处理和分类器训练串起来，中间会自动生成并读取同一份 `features.csv`。默认算法仍是 `decision-tree`，也可以通过 `--algorithm` 换成常见机器学习算法。
 
 ```bash
 python train_tree_classifier.py --label-set labels_0123 --segments-output runs/tree_segments_0123 --tree-output runs/tree_classifier_0123 --overwrite-segments --max-depth 5 --min-samples-leaf 3
@@ -124,11 +124,26 @@ python train_tree_classifier.py --label-set labels_0123 --segments-output runs/t
 python train_tree_classifier.py --features runs/tree_segments/features.csv --tree-output runs/tree_classifier --max-depth 5 --min-samples-leaf 3
 ```
 
+训练随机森林或 SVM：
+
+```bash
+python train_tree_classifier.py --features runs/tree_segments/features.csv --tree-output runs/tree_classifier_rf --algorithm random-forest --n-estimators 300 --max-depth 8 --min-samples-leaf 2
+python train_tree_classifier.py --features runs/tree_segments/features.csv --tree-output runs/tree_classifier_svm --algorithm rbf-svm --svm-c 3.0 --svm-gamma scale
+```
+
 常用参数：
 
 ```text
 --model       可选项目训练权重，必须位于 runs/obb/ 下；不传时使用标签四点框生成 mask
 --label-set   读取识别标签的标签集，例如 labels_0123、labels_01 或 label_bottle
+--algorithm   选择分类器：decision-tree、random-forest、extra-trees、gradient-boosting、ada-boost、logistic-regression、linear-svm、rbf-svm、knn、gaussian-nb、mlp
+--criterion   决策树、随机森林、ExtraTrees 的分裂准则：gini、entropy、log_loss
+--max-depth   树模型最大深度
+--n-estimators 集成模型的估计器数量
+--neighbors   KNN 的邻居数
+--svm-c       SVM/逻辑回归的 C
+--svm-gamma   RBF SVM 的 gamma
+--max-iter    线性模型和 MLP 的最大迭代次数
 --conf        使用模型自动生成 mask 时的置信度筛选阈值，默认 0.25
 --background  mask 外背景，可选 black、white、transparent
 --crop        将输出图片裁剪到 mask 外接框
@@ -137,7 +152,7 @@ python train_tree_classifier.py --features runs/tree_segments/features.csv --tre
 --no-progress 关闭 tqdm 进度条
 ```
 
-决策树会使用 `segment_features.py` 中定义的可解释特征：
+分类器会使用 `segment_features.py` 中定义的可解释特征：
 
 ```text
 mask 几何：mask 面积比例、外接框宽高比例、mask 填充率、mask 中心位置
@@ -147,14 +162,15 @@ mask 几何：mask 面积比例、外接框宽高比例、mask 填充率、mask 
 边缘特征：边缘密度、水平边缘强度
 ```
 
-决策树训练输出：
+分类器训练输出：
 
 ```text
 runs/tree_classifier/
-  decision_tree.joblib
+  <algorithm>.joblib
   metrics.json
-  tree_rules.txt
-  feature_importances.csv
+  tree_rules.txt              仅 decision-tree 输出
+  feature_importances.csv     树模型/集成树模型输出
+  linear_coefficients.csv     线性模型输出
 ```
 
 输出结构：
@@ -168,7 +184,7 @@ runs/tree_segments/
   features.csv
 ```
 
-`features.csv` 会记录分割后的图片路径、原标签、mask 几何、颜色、分层和边缘特征，后续也可作为随机森林等其他分类算法的输入
+`features.csv` 会记录分割后的图片路径、原标签、mask 几何、颜色、分层和边缘特征，可直接复用于以上分类算法
 
 如果需要自动打标，只允许使用本项目前面 `train_obb.py` 训练出的权重，例如：
 
@@ -479,15 +495,15 @@ If the downloaded dataset uses different class names, pass an explicit mapping:
 python convert_roboflow_yolo_to_obb.py --source path/to/roboflow_dataset --output importedDataset --class-map bottle=none level=mid --overwrite
 ```
 
-### Segmented Decision-Tree Data
+### Segmented Classical ML Data
 
-`prepare_tree_segments.py` prepares data for future decision-tree training. By default it does not use any existing model; it reads YOLO OBB label polygons to build masks, keeps only the masked image region, then writes masked images and a `features.csv`
+`prepare_tree_segments.py` prepares data for classical machine-learning classifiers. By default it does not use any existing model; it reads YOLO OBB label polygons to build masks, keeps only the masked image region, then writes masked images and a `features.csv`
 
 ```bash
 python prepare_tree_segments.py --label-set labels_0123 --output runs/tree_segments --overwrite
 ```
 
-`train_tree_classifier.py` connects segmentation preprocessing and decision-tree training, automatically generating and reading the same `features.csv`
+`train_tree_classifier.py` connects segmentation preprocessing and classifier training, automatically generating and reading the same `features.csv`. The default algorithm remains `decision-tree`; use `--algorithm` to switch to other common machine-learning classifiers.
 
 ```bash
 python train_tree_classifier.py --label-set labels_0123 --segments-output runs/tree_segments_0123 --tree-output runs/tree_classifier_0123 --overwrite-segments --max-depth 5 --min-samples-leaf 3
@@ -499,11 +515,26 @@ If `features.csv` already exists, skip segmentation and train directly:
 python train_tree_classifier.py --features runs/tree_segments/features.csv --tree-output runs/tree_classifier --max-depth 5 --min-samples-leaf 3
 ```
 
+Train a random forest or SVM:
+
+```bash
+python train_tree_classifier.py --features runs/tree_segments/features.csv --tree-output runs/tree_classifier_rf --algorithm random-forest --n-estimators 300 --max-depth 8 --min-samples-leaf 2
+python train_tree_classifier.py --features runs/tree_segments/features.csv --tree-output runs/tree_classifier_svm --algorithm rbf-svm --svm-c 3.0 --svm-gamma scale
+```
+
 Useful parameters:
 
 ```text
 --model       optional project-trained weights under runs/obb/; omitted means masks are built from label polygons
 --label-set   label set used as the recognition target, for example labels_0123, labels_01, or label_bottle
+--algorithm   classifier: decision-tree, random-forest, extra-trees, gradient-boosting, ada-boost, logistic-regression, linear-svm, rbf-svm, knn, gaussian-nb, mlp
+--criterion   split criterion for decision-tree, random-forest, and extra-trees: gini, entropy, log_loss
+--max-depth   maximum tree depth
+--n-estimators number of estimators for ensemble algorithms
+--neighbors   number of neighbors for KNN
+--svm-c       C for SVM/logistic regression
+--svm-gamma   gamma for RBF SVM
+--max-iter    maximum iterations for linear models and MLP
 --conf        confidence threshold when a model is used to generate masks, default 0.25
 --background  background outside the mask, one of black, white, transparent
 --crop        crop output images to the mask bounding box
@@ -512,7 +543,7 @@ Useful parameters:
 --no-progress disable tqdm progress bars
 ```
 
-The decision tree uses interpretable features defined in `segment_features.py`:
+The classifiers use interpretable features defined in `segment_features.py`:
 
 ```text
 mask geometry: mask area ratio, bounding-box proportions, mask fill ratio, mask center
@@ -522,14 +553,15 @@ band statistics: HSV mean, dark/bright ratio, and mask fraction in 5 horizontal 
 edge features: edge density and horizontal edge strength
 ```
 
-Decision-tree outputs:
+Classifier outputs:
 
 ```text
 runs/tree_classifier/
-  decision_tree.joblib
+  <algorithm>.joblib
   metrics.json
-  tree_rules.txt
-  feature_importances.csv
+  tree_rules.txt              decision-tree only
+  feature_importances.csv     tree and tree-ensemble models
+  linear_coefficients.csv     linear models
 ```
 
 Output layout:
@@ -543,7 +575,7 @@ runs/tree_segments/
   features.csv
 ```
 
-`features.csv` records the masked image path, original label, mask geometry, color, band, and edge features, so it can also be reused by other classifiers such as random forests later
+`features.csv` records the masked image path, original label, mask geometry, color, band, and edge features, and can be reused directly by the classifiers above
 
 If automatic labeling is needed, only use weights trained earlier by this project through `train_obb.py`, for example:
 
