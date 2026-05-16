@@ -3,11 +3,16 @@ X-AnyLabeling-v4.0.0-beta.5-CPU.exe
 # YOLO output directories
 run/
 runs/
+logs/
 .dataset_views/
 .tmp/
 downloads/
 LCDTC/
 LCDTC*.aria2.txt
+
+# Python runtime artifacts
+__pycache__/
+*.py[cod]
 
 # Ultralytics dataset caches
 *.cache
