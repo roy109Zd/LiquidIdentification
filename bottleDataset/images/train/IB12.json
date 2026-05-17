@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.09403011657189488,
-      "label": "none",
-      "score": 0.49896931648254395,
-      "points": [
-        [
-          61.73520439375898,
-          699.6073958439532
-        ],
-        [
-          1216.7314284340223,
-          808.533042765701
-        ],
-        [
-          1182.9027777777778,
-          1167.2361111111109
-        ],
-        [
-          27.906553737514383,
-          1058.3104641893628
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB12.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.09403011657189488,
+                       "label":  "none",
+                       "points":  [
+                                      [
+                                          61.73520439375898,
+                                          699.6073958439532
+                                      ],
+                                      [
+                                          1216.7314284340223,
+                                          808.533042765701
+                                      ],
+                                      [
+                                          1182.9027777777778,
+                                          1167.2361111111109
+                                      ],
+                                      [
+                                          27.906553737514383,
+                                          1058.3104641893628
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB12.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

@@ -1,0 +1,49 @@
+{
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.014892515934630054,
+                       "label":  "little",
+                       "points":  [
+                                      [
+                                          568.0,
+                                          864.0
+                                      ],
+                                      [
+                                          1038.0,
+                                          871.0
+                                      ],
+                                      [
+                                          1017.0,
+                                          2302.0
+                                      ],
+                                      [
+                                          546.0,
+                                          2295.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "tealittle06.jpg",
+    "imageData":  null,
+    "imageHeight":  4080,
+    "imageWidth":  1832,
+    "description":  ""
+}

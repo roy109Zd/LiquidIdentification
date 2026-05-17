@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.6516718886162006,
-      "label": "much",
-      "score": 0.8454059362411499,
-      "points": [
-        [
-          883.0,
-          293.0
-        ],
-        [
-          1136.0,
-          486.0
-        ],
-        [
-          456.0,
-          1375.0
-        ],
-        [
-          203.0,
-          1182.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB16.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.6516718886162006,
+                       "label":  "much",
+                       "points":  [
+                                      [
+                                          883.0,
+                                          293.0
+                                      ],
+                                      [
+                                          1136.0,
+                                          486.0
+                                      ],
+                                      [
+                                          456.0,
+                                          1375.0
+                                      ],
+                                      [
+                                          203.0,
+                                          1182.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB16.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

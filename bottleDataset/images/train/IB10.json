@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 5.820944849884238,
-      "label": "little",
-      "score": 0.5641812682151794,
-      "points": [
-        [
-          -41.488137157214624,
-          129.4828791207451
-        ],
-        [
-          335.6882369018146,
-          -58.44234344446487
-        ],
-        [
-          1024.5694444444443,
-          1324.1805555555554
-        ],
-        [
-          647.393070385415,
-          1512.1057781207653
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB10.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  5.820944849884238,
+                       "label":  "little",
+                       "points":  [
+                                      [
+                                          -41.488137157214624,
+                                          129.4828791207451
+                                      ],
+                                      [
+                                          335.6882369018146,
+                                          -58.44234344446487
+                                      ],
+                                      [
+                                          1024.5694444444443,
+                                          1324.1805555555554
+                                      ],
+                                      [
+                                          647.393070385415,
+                                          1512.1057781207653
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB10.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

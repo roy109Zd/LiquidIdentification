@@ -1,0 +1,49 @@
+{
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.34374362363578215,
+                       "label":  "much",
+                       "points":  [
+                                      [
+                                          781.0,
+                                          1270.0
+                                      ],
+                                      [
+                                          1133.0,
+                                          1396.0
+                                      ],
+                                      [
+                                          767.0,
+                                          2416.0
+                                      ],
+                                      [
+                                          415.0,
+                                          2289.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "piwater_much02.jpg",
+    "imageData":  null,
+    "imageHeight":  4080,
+    "imageWidth":  1832,
+    "description":  ""
+}

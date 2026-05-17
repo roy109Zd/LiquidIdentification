@@ -1,0 +1,49 @@
+{
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.03606682731617951,
+                       "label":  "little",
+                       "points":  [
+                                      [
+                                          542.0,
+                                          693.0
+                                      ],
+                                      [
+                                          930.0,
+                                          707.0
+                                      ],
+                                      [
+                                          889.0,
+                                          1889.0
+                                      ],
+                                      [
+                                          500.0,
+                                          1875.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "piwater_little08.jpg",
+    "imageData":  null,
+    "imageHeight":  3280,
+    "imageWidth":  1472,
+    "description":  ""
+}

@@ -1,0 +1,49 @@
+{
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "label":  "much",
+                       "points":  [
+                                      [
+                                          1130.1973289188388,
+                                          626.2440174253888
+                                      ],
+                                      [
+                                          1727.254069536863,
+                                          957.1979729808478
+                                      ],
+                                      [
+                                          686.8333333333335,
+                                          2834.166666666666
+                                      ],
+                                      [
+                                          89.77659271530953,
+                                          2503.212711111207
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ],
+                       "direction":  0.5061454830783558
+                   }
+               ],
+    "imagePath":  "teamiddle20.jpg",
+    "imageData":  null,
+    "imageHeight":  4080,
+    "imageWidth":  1832,
+    "description":  ""
+}

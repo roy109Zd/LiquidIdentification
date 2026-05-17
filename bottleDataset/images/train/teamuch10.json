@@ -1,0 +1,49 @@
+{
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.0,
+                       "label":  "much",
+                       "points":  [
+                                      [
+                                          592.0,
+                                          594.0
+                                      ],
+                                      [
+                                          956.0,
+                                          594.0
+                                      ],
+                                      [
+                                          956.0,
+                                          1906.0
+                                      ],
+                                      [
+                                          592.0,
+                                          1906.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "teamuch10.jpg",
+    "imageData":  null,
+    "imageHeight":  3280,
+    "imageWidth":  1472,
+    "description":  ""
+}

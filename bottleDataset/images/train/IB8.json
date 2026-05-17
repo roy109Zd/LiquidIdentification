@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0,
-      "label": "little",
-      "score": null,
-      "points": [
-        [
-          234.29166666666663,
-          100.5694444444444
-        ],
-        [
-          746.7916666666666,
-          100.5694444444444
-        ],
-        [
-          746.7916666666666,
-          1361.6805555555554
-        ],
-        [
-          234.29166666666663,
-          1361.6805555555554
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB8.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0,
+                       "label":  "little",
+                       "points":  [
+                                      [
+                                          234.29166666666663,
+                                          100.5694444444444
+                                      ],
+                                      [
+                                          746.7916666666666,
+                                          100.5694444444444
+                                      ],
+                                      [
+                                          746.7916666666666,
+                                          1361.6805555555554
+                                      ],
+                                      [
+                                          234.29166666666663,
+                                          1361.6805555555554
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB8.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

@@ -1,0 +1,49 @@
+{
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.02491777642348655,
+                       "label":  "none",
+                       "points":  [
+                                      [
+                                          425.39412126045846,
+                                          690.5309185053609
+                                      ],
+                                      [
+                                          1194.531653259439,
+                                          709.7000830807183
+                                      ],
+                                      [
+                                          1130.6058787395414,
+                                          3234.469081494639
+                                      ],
+                                      [
+                                          361.46834674056083,
+                                          3215.2999169192817
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "teanone16.jpg",
+    "imageData":  null,
+    "imageHeight":  4080,
+    "imageWidth":  1832,
+    "description":  ""
+}

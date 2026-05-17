@@ -1,0 +1,49 @@
+{
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  6.271524028216165,
+                       "label":  "mid",
+                       "points":  [
+                                      [
+                                          387.0,
+                                          412.0
+                                      ],
+                                      [
+                                          1073.0,
+                                          404.0
+                                      ],
+                                      [
+                                          1094.0,
+                                          2324.0
+                                      ],
+                                      [
+                                          408.0,
+                                          2332.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "teamiddle07.jpg",
+    "imageData":  null,
+    "imageHeight":  3280,
+    "imageWidth":  1472,
+    "description":  ""
+}

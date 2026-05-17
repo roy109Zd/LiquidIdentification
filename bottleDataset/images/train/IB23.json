@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.017339302558153406,
-      "label": "little",
-      "score": 0.9439172744750977,
-      "points": [
-        [
-          445.0,
-          82.0
-        ],
-        [
-          791.0,
-          88.0
-        ],
-        [
-          770.0,
-          1339.0
-        ],
-        [
-          424.0,
-          1333.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB23.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.017339302558153406,
+                       "label":  "little",
+                       "points":  [
+                                      [
+                                          445.0,
+                                          82.0
+                                      ],
+                                      [
+                                          791.0,
+                                          88.0
+                                      ],
+                                      [
+                                          770.0,
+                                          1339.0
+                                      ],
+                                      [
+                                          424.0,
+                                          1333.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB23.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

@@ -1,0 +1,49 @@
+{
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "label":  "none",
+                       "points":  [
+                                      [
+                                          463.45833333333337,
+                                          413.0694444444444
+                                      ],
+                                      [
+                                          806.5138888888888,
+                                          413.0694444444444
+                                      ],
+                                      [
+                                          806.5138888888888,
+                                          1201.9583333333333
+                                      ],
+                                      [
+                                          463.45833333333337,
+                                          1201.9583333333333
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ],
+                       "direction":  0
+                   }
+               ],
+    "imagePath":  "IB121.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
+}

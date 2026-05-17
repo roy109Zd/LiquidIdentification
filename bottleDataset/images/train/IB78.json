@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.030564964086963384,
-      "label": "bottle",
-      "score": 0.9367469549179077,
-      "points": [
-        [
-          531.9616634761389,
-          287.80446999405126
-        ],
-        [
-          898.8773903810111,
-          299.0227296571752
-        ],
-        [
-          859.2605587460828,
-          1532.639974450393
-        ],
-        [
-          493.3434613759652,
-          1521.4740507435117
-        ]
-      ],
-      "group_id": null,
-      "description": null,
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB78.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.030564964086963384,
+                       "label":  "bottle",
+                       "points":  [
+                                      [
+                                          531.9616634761389,
+                                          287.80446999405126
+                                      ],
+                                      [
+                                          898.8773903810111,
+                                          299.0227296571752
+                                      ],
+                                      [
+                                          859.2605587460828,
+                                          1532.639974450393
+                                      ],
+                                      [
+                                          493.3434613759652,
+                                          1521.4740507435117
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  null,
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB78.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

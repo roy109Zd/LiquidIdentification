@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0,
-      "label": "mid",
-      "score": null,
-      "points": [
-        [
-          45.402777777777715,
-          713.0694444444445
-        ],
-        [
-          1250.9583333333335,
-          713.0694444444445
-        ],
-        [
-          1250.9583333333335,
-          1120.0138888888887
-        ],
-        [
-          45.402777777777715,
-          1120.0138888888887
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB5.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0,
+                       "label":  "mid",
+                       "points":  [
+                                      [
+                                          45.402777777777715,
+                                          713.0694444444445
+                                      ],
+                                      [
+                                          1250.9583333333335,
+                                          713.0694444444445
+                                      ],
+                                      [
+                                          1250.9583333333335,
+                                          1120.0138888888887
+                                      ],
+                                      [
+                                          45.402777777777715,
+                                          1120.0138888888887
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB5.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 5.712438029913668,
-      "label": "mid",
-      "score": 0.8986833095550537,
-      "points": [
-        [
-          120.0,
-          568.0
-        ],
-        [
-          377.0,
-          403.0
-        ],
-        [
-          984.0,
-          1352.0
-        ],
-        [
-          727.0,
-          1516.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB51.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  5.712438029913668,
+                       "label":  "mid",
+                       "points":  [
+                                      [
+                                          120.0,
+                                          568.0
+                                      ],
+                                      [
+                                          377.0,
+                                          403.0
+                                      ],
+                                      [
+                                          984.0,
+                                          1352.0
+                                      ],
+                                      [
+                                          727.0,
+                                          1516.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB51.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

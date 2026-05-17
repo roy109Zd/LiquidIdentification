@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0,
-      "label": "much",
-      "score": null,
-      "points": [
-        [
-          160.68055555555543,
-          856.1250000000001
-        ],
-        [
-          1203.7361111111109,
-          856.1250000000001
-        ],
-        [
-          1203.7361111111109,
-          1158.9027777777776
-        ],
-        [
-          160.68055555555543,
-          1158.9027777777776
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB17.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0,
+                       "label":  "much",
+                       "points":  [
+                                      [
+                                          160.68055555555543,
+                                          856.1250000000001
+                                      ],
+                                      [
+                                          1203.7361111111109,
+                                          856.1250000000001
+                                      ],
+                                      [
+                                          1203.7361111111109,
+                                          1158.9027777777776
+                                      ],
+                                      [
+                                          160.68055555555543,
+                                          1158.9027777777776
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB17.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

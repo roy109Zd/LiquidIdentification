@@ -1,0 +1,49 @@
+{
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.1363068659234677,
+                       "label":  "bottle",
+                       "points":  [
+                                      [
+                                          729.3000742441438,
+                                          546.3656772156112
+                                      ],
+                                      [
+                                          1376.0300336320374,
+                                          635.0694518260201
+                                      ],
+                                      [
+                                          1082.6999257558562,
+                                          2771.634322784389
+                                      ],
+                                      [
+                                          436.0571221107107,
+                                          2681.9343534758873
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  null,
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "teanone06.jpg",
+    "imageData":  null,
+    "imageHeight":  4080,
+    "imageWidth":  1832,
+    "description":  ""
+}

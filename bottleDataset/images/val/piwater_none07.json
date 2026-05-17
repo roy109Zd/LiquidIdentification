@@ -1,0 +1,49 @@
+{
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.466328567725075,
+                       "label":  "none",
+                       "points":  [
+                                      [
+                                          1077.0,
+                                          666.0
+                                      ],
+                                      [
+                                          1673.0,
+                                          966.0
+                                      ],
+                                      [
+                                          761.0,
+                                          2779.0
+                                      ],
+                                      [
+                                          165.0,
+                                          2479.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "piwater_none07.jpg",
+    "imageData":  null,
+    "imageHeight":  4080,
+    "imageWidth":  1832,
+    "description":  ""
+}

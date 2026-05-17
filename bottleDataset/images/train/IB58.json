@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 6.248416715323504,
-      "label": "none",
-      "score": 0.9012159109115601,
-      "points": [
-        [
-          515.0,
-          375.0
-        ],
-        [
-          745.0,
-          367.0
-        ],
-        [
-          775.0,
-          1290.0
-        ],
-        [
-          546.0,
-          1297.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB58.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  6.248416715323504,
+                       "label":  "none",
+                       "points":  [
+                                      [
+                                          515.0,
+                                          375.0
+                                      ],
+                                      [
+                                          745.0,
+                                          367.0
+                                      ],
+                                      [
+                                          775.0,
+                                          1290.0
+                                      ],
+                                      [
+                                          546.0,
+                                          1297.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB58.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

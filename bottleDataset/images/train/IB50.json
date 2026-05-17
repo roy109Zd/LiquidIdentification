@@ -1,42 +1,49 @@
 {
-  "version": "4.0.0-beta.5",
-  "flags": {},
-  "checked": false,
-  "shapes": [
-    {
-      "direction": 0.0,
-      "label": "mid",
-      "score": 0.9241743087768555,
-      "points": [
-        [
-          415.0,
-          371.4027777777777
-        ],
-        [
-          678.736111111111,
-          371.4027777777777
-        ],
-        [
-          678.736111111111,
-          1412.0
-        ],
-        [
-          415.0,
-          1412.0
-        ]
-      ],
-      "group_id": null,
-      "description": "",
-      "difficult": false,
-      "shape_type": "rotation",
-      "flags": {},
-      "attributes": {},
-      "kie_linking": []
-    }
-  ],
-  "imagePath": "IB50.jpg",
-  "imageData": null,
-  "imageHeight": 1706,
-  "imageWidth": 1279,
-  "description": ""
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.0,
+                       "label":  "mid",
+                       "points":  [
+                                      [
+                                          415.0,
+                                          371.4027777777777
+                                      ],
+                                      [
+                                          678.736111111111,
+                                          371.4027777777777
+                                      ],
+                                      [
+                                          678.736111111111,
+                                          1412.0
+                                      ],
+                                      [
+                                          415.0,
+                                          1412.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "IB50.jpg",
+    "imageData":  null,
+    "imageHeight":  1706,
+    "imageWidth":  1279,
+    "description":  ""
 }

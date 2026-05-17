@@ -1,0 +1,49 @@
+{
+    "version":  "4.0.0-beta.5",
+    "flags":  {
+
+              },
+    "checked":  false,
+    "shapes":  [
+                   {
+                       "direction":  0.5891033185680872,
+                       "label":  "mid",
+                       "points":  [
+                                      [
+                                          1024.0,
+                                          873.0
+                                      ],
+                                      [
+                                          1443.0,
+                                          1153.0
+                                      ],
+                                      [
+                                          652.0,
+                                          2335.0
+                                      ],
+                                      [
+                                          233.0,
+                                          2055.0
+                                      ]
+                                  ],
+                       "group_id":  null,
+                       "description":  "",
+                       "difficult":  false,
+                       "shape_type":  "rotation",
+                       "flags":  {
+
+                                 },
+                       "attributes":  {
+
+                                      },
+                       "kie_linking":  [
+
+                                       ]
+                   }
+               ],
+    "imagePath":  "piwater_middle05.jpg",
+    "imageData":  null,
+    "imageHeight":  4080,
+    "imageWidth":  1832,
+    "description":  ""
+}
